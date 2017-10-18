@@ -1,0 +1,31 @@
+ <canvas id="mybarChart"></canvas>
+                                 </div>	
+						<?php $__env->startSection('scripts'); ?>
+					
+        
+        <script type="text/javascript">
+           if ($('#mybarChart').length ){
+			  var ctx = document.getElementById("mybarChart");
+			  var mybarChart = new Chart(ctx, {
+				type: 'bar',
+				data: {
+				  labels: <?php echo json_encode($labels); ?>,
+				  datasets: <?php echo json_encode($dataset); ?>
+
+				},
+
+				options: {
+				  scales: {
+					yAxes: [{
+					  ticks: {
+						beginAtZero: true
+					  }
+					}]
+				  }
+				}
+			  });
+
+			}
+        </script>
+  
+					<?php $__env->stopSection(); ?>

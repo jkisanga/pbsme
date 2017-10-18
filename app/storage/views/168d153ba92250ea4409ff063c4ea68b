@@ -1,0 +1,11 @@
+<div class="pull-right mb-10">
+
+<div class="btn-group">
+      <input type="submit" class="btn btn-primary" value="Search"/>
+</div>
+ <?php if( isset($items)): ?> 
+    <div class="btn-group">
+       <a href="<?php echo URL::to('reports/zoneForm3c'); ?>" class="btn btn-primary" ><i class="fa fa-file-excel"></i> Download</a>
+    </div><!--btn group-->
+	<?php endif; ?>
+ </div>

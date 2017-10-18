@@ -1,0 +1,75 @@
+
+
+<?php $__env->startSection('content'); ?>
+ <!--BEGIN CONTENT-->
+  <div class="col-md-12 col-xs-12">
+                 <div class="x_panel">
+                   <div class="x_title">
+                   <form  method="POST" action="<?php echo URL::to('submissions/postZoneReport'); ?>">
+                 <input type="hidden" name="_token" value="<?php echo e(Session::getToken()); ?>"/>
+
+                    <div class="row">
+                        <div class="col-xs-4 col-sm-4 col-md-4">
+
+                                <div class="form-group <?php echo $errors->has('year') ? 'has-error' : ''; ?>">
+
+                                  <select name="year" class="form-control">
+                                  <option value=""> Select Financial Year</option>
+                                   <?php foreach($years as $year ): ?>
+                                   <option value="<?php echo $year->id; ?>"><?php echo $year->year; ?></option>
+                                   <?php endforeach; ?>
+                                  </select>
+								<?php echo $errors->first('year', '<span class="help-block">:message</span>'); ?>
+
+                                </div>
+                             </div>
+							 	<?php if(Auth::user()->hasRole('supermanager')): ?>	
+											   <div class="col-xs-2 col-sm-2 col-md-2">
+
+                                                   <div class="form-group  <?php echo e($errors->has('zone') ? 'has-error' : ''); ?>">
+                                                     <select name="zone" class="form-control">
+                                                     <option value="<?php echo $zone->id; ?>"> <?php echo $zone->zone_name; ?></option>
+                                                      <?php foreach($zones as $zone ): ?>
+                                                      <option value="<?php echo $zone->id; ?>"><?php echo $zone->zone_name; ?></option>
+                                                      <?php endforeach; ?>
+                                                     </select>
+                                                      <?php echo $errors->first('zone', '<span class="help-block">:message</span>'); ?>
+
+                                                   </div>
+                                                </div>
+												<?php endif; ?>
+                                <div class="col-xs-2 col-sm-2 col-md-2">
+                                  <div class="form-group">
+                                   <input type="submit" class="btn btn-primary" value="Search"/>
+                                   </div>
+                                </div>
+								<?php if(isset($print)): ?>
+									<div class="col-xs-2 col-sm-2 col-md-2">
+									   <div class="btn-group">
+											<button type="button" class="btn btn-primary  dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+											   Download <span class="caret"></span>
+											</button>
+
+											<ul class="dropdown-menu" role="menu">
+												<li><a href="<?php echo URL::to('submissions/downloadZoneReport'); ?>"><i class="fa fa-file-excel-o"></i> Excel</a></li>
+										
+											</ul>
+										</div><!--btn group-->                                </div>
+								<?php endif; ?>
+								
+                    </div>
+                    </form>
+                   </div>
+				<div class="x_content">
+				   <?php echo $revenue_view; ?>
+
+						  
+				</div>
+				</div>
+               </div>
+
+
+
+                    <?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('action.layouts.default', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

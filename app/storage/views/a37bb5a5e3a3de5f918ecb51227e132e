@@ -1,0 +1,74 @@
+<?php $__env->startSection('content'); ?>
+<div class="col-lg-12">
+<div class="x_panel">
+     <div class="x_title">
+        Objective :   &nbsp; <b><?php echo $objective->ob_code; ?> - &nbsp; <?php echo $objective->ob_description; ?></b><br>
+           <h2>&nbsp;&nbsp;&nbsp;&nbsp;KPI : <b>&nbsp; <?php echo $kpi->name; ?></b> &nbsp; ( <?php echo $f_year->year; ?> )</h2>
+        <a href="<?php echo URL::to('kpis/objectives'); ?>" class="btn btn-sm btn-warning pull-right"><i class="fa fa-backward"></i></a>
+        <div class="clearfix"></div>
+            </div>
+            <div class="x_content" >
+               <div class="col-md-12 col-sm-12 col-xs-12">
+                               <div class="x_panel">
+                                 <div class="x_title">
+                                   <h2> <small></small></h2>
+<a href="<?php echo URL::to('kpis/createKPI/'.$kpi->id); ?>" class="btn btn-sm btn-primary pull-right"><i class="fa fa-plus-square"></i> Add New Input</a>
+<a href="<?php echo URL::to('kpis/createKPI/'.$kpi->id); ?>" class="btn btn-sm btn-default pull-right"><i class="fa fa-th-list"></i> Query Report</a>
+                                   <div class="clearfix"></div>
+                                 </div>
+                                 <div class="x_content">
+                                   <canvas id="mybarChart"></canvas>
+                                 </div>
+                               </div>
+                             </div>
+                            </div>
+                            </div>
+                        </div>
+
+               <?php $__env->stopSection(); ?>
+
+                <?php $__env->startSection('scripts'); ?>
+               		<script>
+
+
+<?php /*if ($('#mybarChart').length ){*/ ?>
+
+			  <?php /*var ctx = document.getElementById("mybarChart");*/ ?>
+			  <?php /*var mybarChart = new Chart(ctx, {*/ ?>
+				<?php /*type: 'bar',*/ ?>
+				<?php /*data: {*/ ?>
+				  <?php /*labels: ["First Quarter", "Second Quarter", "Third Quarter", "Forth Quarter"],*/ ?>
+				  <?php /*datasets: [{*/ ?>
+					<?php /*label: '#of Male',*/ ?>
+					<?php /*backgroundColor: "#257c2c",*/ ?>
+					<?php /*data: [51, 30, 40, 28]*/ ?>
+				  <?php /*}, {*/ ?>
+					<?php /*label: '# Male with HIV',*/ ?>
+					<?php /*backgroundColor: "#65918f",*/ ?>
+					<?php /*data: <?php echo json_encode($data); ?>*/ ?>
+				  <?php /*}, {*/ ?>
+					<?php /*label: '# of Female',*/ ?>
+					<?php /*backgroundColor: "#293a11",*/ ?>
+					<?php /*data: [41, 56, 25, 48]*/ ?>
+				  <?php /*}, {*/ ?>
+					<?php /*label: '# of Fimale with HIV',*/ ?>
+					<?php /*backgroundColor: "#36CAAB",*/ ?>
+					<?php /*data: [41, 56, 25, 48]*/ ?>
+				  <?php /*}]*/ ?>
+				<?php /*},*/ ?>
+
+				<?php /*options: {*/ ?>
+				  <?php /*scales: {*/ ?>
+					<?php /*yAxes: [{*/ ?>
+					  <?php /*ticks: {*/ ?>
+						<?php /*beginAtZero: true*/ ?>
+					  <?php /*}*/ ?>
+					<?php /*}]*/ ?>
+				  <?php /*}*/ ?>
+				<?php /*}*/ ?>
+			  <?php /*});*/ ?>
+
+			<?php /*}*/ ?>
+               		</script>
+               		<?php $__env->stopSection(); ?>
+<?php echo $__env->make('action.layouts.default', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -1,0 +1,45 @@
+ <?php if(isset($budgets)): ?>
+           <table class="table table-hover table-bordered"  border="1" cellspacing="2", cellpadding="5">
+    		<thead>
+			 <tr>
+				<td colspan="7" style="text-align:center"><h2>Budget Summary Per Zone For Financial Year <?php echo $financialYear->year; ?></h2></td>
+			</tr>
+    			<tr>
+    				<th class="col-md-10">STATION</th>
+    				<th class="col-md-10">OBJECTIVE A</th>
+    				<th class="col-md-10">OBJECTIVE B</th>
+    				<th class="col-md-10">OBJECTIVE C</th>
+    				<th class="col-md-10">OBJECTIVE D</th>
+    				<th class="col-md-10">OBJECTIVE E</th>
+    				<th class="col-md-10">TOTAL</th>
+    			</tr>
+    		</thead>
+
+    		<tbody>
+    		    <?php foreach($budgets as $budget): ?>
+    		    <tr>
+    		           <td><?php echo $budget->zone; ?></td>
+    		           <td><?php echo String::formatMoney($budget->OBJECTIVEA); ?></td>
+    		           <td><?php echo String::formatMoney($budget->OBJECTIVEB); ?></td>
+    		           <td><?php echo String::formatMoney($budget->OBJECTIVEC); ?></td>
+    		           <td><?php echo String::formatMoney($budget->OBJECTIVED); ?></td>
+    		           <td><?php echo String::formatMoney($budget->OBJECTIVEE); ?></td>
+    		           <td style="background-color: #2aabd2">
+    		             <b><?php echo String::formatMoney($budget->OBJECTIVEA+$budget->OBJECTIVEB+$budget->OBJECTIVEC+$budget->OBJECTIVED+$budget->OBJECTIVEE); ?></b>
+    		           </td>
+
+    		   </tr>
+    		   <?php endforeach; ?>
+			
+					<tr>
+						<th>Total</th>
+						<th><?php echo String::formatMoney($objA); ?></th>
+						<th><?php echo String::formatMoney($objB); ?></th>
+						<th><?php echo String::formatMoney($objC); ?></th>
+						<th><?php echo String::formatMoney($objD); ?></th>
+						<th><?php echo String::formatMoney($objE); ?></th>
+						<th><?php echo String::formatMoney($total); ?></th>
+					</tr>		
+    		 </tbody>
+    		 </table>
+        <?php endif; ?>

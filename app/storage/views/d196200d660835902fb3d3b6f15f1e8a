@@ -1,0 +1,93 @@
+
+       <?php 
+			for( $i = 0; $i < count($dbLabels); $i++){
+
+			echo ' <div class="row">
+			<div class="col-md-6"> 
+			<h3><i>Bar Chat for Data against '.$titles[$i].' </i></h3>
+			<canvas id="mybarChart'.$i.'">
+			</canvas></div>
+					
+				<div class="col-md-6">
+				<h3><i>Pie Chat for Data against '.$titles[$i].' </i></h3>
+				<canvas id="mypieChart'.$i.'"></canvas>
+				</div></div>';
+		?>                       
+
+				
+        <script type="text/javascript">
+		
+		var i = <?php echo $i; ?>;
+		var barid = 'mybarChart'+i;
+		var pieid = 'mypieChart'+i;
+		var bar = '#mybarChart'+i;
+		var pie = '#mypieChart'+i;
+	
+           if ($(bar).length ){
+			  var ctx = document.getElementById(barid);
+			  var mybarChart = new Chart(ctx, {
+				type: 'bar',
+				data: {
+				  labels: <?php echo json_encode(array_values(array_unique($dbLabels[$i]['labels']))); ?>,
+				  datasets: <?php echo json_encode($dataset); ?>
+
+				},
+
+				options: {
+				  scales: {
+					yAxes: [{
+					  ticks: {
+						beginAtZero: true
+					  }
+					}]
+				  }
+				}
+			  });
+
+			}
+			
+			 if ($('#mylineChart').length ){
+
+			  var ctx = document.getElementById("mylineChart");
+			  var mylineChart = new Chart(ctx, {
+				type: 'line',
+				data: {
+				  labels: <?php echo json_encode(array_values(array_unique($dbLabels[$i]['labels']))); ?>,
+				  datasets: <?php echo json_encode($linedataset); ?>
+
+				},
+				options: {
+				  scales: {
+					yAxes: [{
+					  ticks: {
+						beginAtZero: true
+					  }
+					}]
+				  }
+				}
+			  });
+
+			}
+			
+			 if ($(pie).length ){
+
+			  var ctx = document.getElementById(pieid);
+			  var mypieChart = new Chart(ctx, {
+				type: 'pie',
+				data: {
+				  labels: <?php echo json_encode(array_values(array_unique($dbLabels[$i]['labels']))); ?>,
+				  datasets: <?php echo json_encode($dataset); ?>
+
+				},
+				otpions:{legend:!1}
+				
+			  });
+
+			};
+			
+			
+        </script>
+			
+			<?php }?>
+  
+				

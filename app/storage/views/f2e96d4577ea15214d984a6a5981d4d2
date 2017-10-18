@@ -1,0 +1,50 @@
+														
+ <style>
+	table{
+	    font-family: "verdana", "sans-serif";
+	    border: 1px;
+	    border-spacing: 2px;
+
+	}
+ </style>
+ 
+                           <?php if( isset($items) && count($items) > 0): ?>
+
+                            <table class="table table-hover table-bordered"  border="1" cellspacing=2 cellpadding=5>
+                            <thead>
+                            
+                            <tr>
+                                <th>Seg 4 (GFS  Code)</th>
+                                <th>Seg 4 Description (GFS Code Description)</th>
+                                <th>Annual Budget Estimates <?php echo $financialYear->year; ?></th>
+                                <th>Forward Estimates <?php echo $forward_et1; ?> (5%)</th>
+                                <th>Forward Estimates <?php echo $forward_et2; ?> (10%)</th>
+                                
+                            </tr>
+
+                            </thead>
+                            <tbody>                            
+								 <?php foreach($items as $input): ?>
+                                <td class="success"><?php echo $input->item_code; ?></td>
+                                <td class="active"><?php echo $input->input_description; ?></td>
+                                <td class="warning"><?php echo String::formatMoney($input->totalCost); ?></td>
+								
+								<td class="success"><?php echo String::formatMoney((5/100 *($input->totalCost)) + $input->totalCost); ?></td>
+								<td class="warning"><?php echo String::formatMoney((10/100 *($input->totalCost)) + $input->totalCost); ?></td>
+                               
+                               </tr> </tbody>
+
+                               <?php endforeach; ?>
+							   <tr>
+							   <td></td>
+							   <th>Total</th>
+							   <th class="warning"><?php echo String::formatMoney($grandTotalCost); ?></th>
+							   <th class="success"><?php echo String::formatMoney($grandTotalCostForwad1); ?></th>
+							   <th class="warning"><?php echo String::formatMoney($grandTotalCostForwad2); ?></th>
+							   
+							   </tr>
+                                
+                            </table>
+                            <?php else: ?>
+                            <div class=" form-control alert-warning">No data for the selected year</div>
+                             <?php endif; ?>

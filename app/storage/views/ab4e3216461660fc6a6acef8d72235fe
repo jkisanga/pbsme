@@ -1,0 +1,76 @@
+<?php /* Web site Title */ ?>
+<?php $__env->startSection('title'); ?>
+	<?php echo e($title); ?> :: @parent
+<?php $__env->stopSection(); ?>
+
+<?php /* Content */ ?>
+<?php $__env->startSection('content'); ?><div class="x_panel">
+	<div class="page-header">
+		<h3>
+			<?php echo e($title); ?>
+
+
+			<div class="pull-right">
+				<a href="<?php echo e(URL::to('admin/users/create')); ?>" class="btn btn-small btn-info iframe" title="Add New PBS User"><span class="glyphicon glyphicon-plus-sign"></span> New User</a>
+				<a href="<?php echo e(URL::to('admin/system/positions')); ?>" class="btn btn-small btn-default" title="Manage Job Titles"><span class="glyphicon glyphicon-cog"></span> Job Titles</a>
+			</div>
+		</h3>
+	</div>
+
+	<table id="users" class=" dt table table-striped table-hover ">
+		<thead>
+			<tr>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Title</th>
+				<th>Email</th>
+				<th>Unit</th>
+				<th>status</th>
+				<th class="col-md-2"><?php echo e(Lang::get('table.actions')); ?></th>
+			</tr>
+		</thead>
+		<tbody>
+        <?php foreach($users as $user): ?>
+        <tr>
+            <td><?php echo $user->first_name; ?></td>
+            <td><?php echo $user->last_name; ?></td>
+            <td><?php echo $user->title; ?></td>
+            <td><?php echo $user->email; ?></td>
+            <td><?php echo $user->unit->name; ?></td>
+			 <td><?php if($user->active): ?> <span class="alert-success">Active</span> <?php else: ?> <span class="alert-danger">Deactive</span><?php endif; ?></td>
+		   
+            <td class="col-lg-2">
+				  <div class="dropdown">
+					<button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+					  Options
+					  <span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu " aria-labelledby="dropdownMenu1">
+					   <li><a href="<?php echo URL::to('admin/users/' . $user->id . '/edit'); ?>" >Edit</a></li>
+						 <li> <a href="<?php echo e(URL::to('admin/users/reset_password/' . $user->id  )); ?>">Reset Password</a></li>
+					   <?php if($user->active==true): ?>
+					   <li><a href="<?php echo URL::to('admin/users/' . $user->id . '/deactivate'); ?>" onclick="return confirm('Are you sure?')">Deactivate</a></li>
+					   <?php else: ?>
+					   <li><a href="<?php echo URL::to('admin/users/' . $user->id . '/activate'); ?>" onclick="return confirm('Are you sure?')">Activate</a></li>
+					<?php endif; ?>
+			   </ul>
+			  </div>
+		</td>
+
+        </tr>
+       <?php endforeach; ?>
+		</tbody>
+	</table>
+	</div>
+<?php $__env->stopSection(); ?>
+
+<?php /* Scripts */ ?>
+<?php $__env->startSection('scripts'); ?>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			 $('.table').dataTable( );
+
+		});
+	</script>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('action.layouts.default', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -1,0 +1,49 @@
+<?php $__env->startSection('content'); ?>
+<div class="col-lg-12">
+                        <div class="panel panel-green">
+                            <div class="panel-heading"> <small style="color: red"> NOTE: Only one Financial Year Should be Active</small>
+                                 <b class="pull-right"><a class="btn btn-primary" href="<?php echo URL::to('financial_year/create'); ?>" >Add Financial Year</a></b>
+
+                            </div>
+                            <div class="panel-body">
+				<table class="table dt  table-hover table-striped table-bordered table-responsive ">
+					<thead>
+                        <tr>
+							 <th>Year</th>
+							  <th>Projection Percentage</th>
+							 <th>Status</th>						
+							 <th class="col-lg-2">Action</th>
+                     </tr>
+                     </thead>
+                     <tbody>
+                     <?php foreach($items as $item): ?>
+                     <tr>
+                         <td><?php echo $item->year; ?></td>
+                         <td><?php echo $item->projection_percentage; ?></td>
+                         <td><?php if($item->status == 0): ?> <b style="color: #802420">Inactive</b><?php else: ?><b style="color: #009926"> Active</b> <?php endif; ?></td>
+                         <td class="col-lg-2">
+								 <?php if($item->status == 0): ?>
+								 <div class="dropdown">
+								   <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+									 Options
+									 <span class="caret"></span>
+								   </button>
+								   <ul class="dropdown-menu " aria-labelledby="dropdownMenu1">
+									 <li><a href="<?php echo URL::to('financial_year/edit/'.$item->id); ?>" >Edit</a></li>
+									 <li><a href="<?php echo URL::to('financial_year/activate/'.$item->id); ?>" onclick="return confirm('Are sure  ?')"  >Activate</a></li>
+
+							  </ul>
+							 </div><?php else: ?>
+							 <b>No Options</b>
+							 <?php endif; ?>
+						</td>
+					 </tr>
+                     <?php endforeach; ?>
+                    </tbody>
+                                    </table>
+				</div>
+				</div>
+				</div>
+
+                    <?php $__env->stopSection(); ?>
+<?php echo $__env->make('action.layouts.default', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

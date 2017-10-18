@@ -1,0 +1,122 @@
+<?php $__env->startSection('content'); ?>
+<div class="col-lg-12">
+<div class="x_panel">
+                  <div class="x_title">
+                <h2>  REVENUE PROJECTION FOR FINANCIAL YEAR <b><?php echo $financial_year->year; ?></b> FOR  <b><?php echo Auth::user()->unit->name; ?></b> UNIT</h2> <?php if($unit_submited): ?><label class="label label-success pull-right">Submitted</label><?php endif; ?>
+                 <div class="clearfix"></div>
+                  </div>
+                        <div class="x_content">
+                            <?php if( isset($submissions) && count($submissions) > 0): ?>
+                                <table class="table table-hover table-striped jambo_table bulk_action dt">
+                                    <thead>
+                                    <tr>
+                                        <th>Item Code</th>
+                                        <th>Description of Revenue </th>
+                                        <th>Royalty </th>
+                                        <th>Taff</th>
+                                        <th>VAT</th>
+                                        <th>CESS</th>
+                                        <th>LMDA</th>
+                                        <th>Tree</th>
+										 <?php if(!$unit_submited): ?>
+
+                                        <th class="col-lg-1">Action</th>
+										<?php endif; ?>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <?php foreach($items as $value): ?>
+                                    <tr>
+                                    <th></th>
+                                    <th colspan="8"><?php echo $value->name; ?></th>
+
+                                    </tr>
+                                      <?php foreach(Submission::unit_revenue($value->id,$financial_year->id,Auth::user()->unit_id) as $item): ?>
+                             <tr>
+								<td><?php echo $item->item_code; ?></td>
+								<td><?php echo $item->type_of_fee; ?></td>
+								<td><?php echo String::formatMoney($item->royalty); ?></td>
+								<td><?php echo String::formatMoney($item->taff); ?></td>
+								<td><?php echo String::formatMoney($item->vat); ?></td>
+								<td><?php echo String::formatMoney($item->cess); ?></td>
+								<td><?php echo String::formatMoney($item->lmda); ?></td>
+								<td><?php echo String::formatMoney($item->tree); ?></td>
+
+										<?php if(!$unit_submited): ?>
+									
+                                       <?php /*<td><a href="<?php echo URL::to('submissions/show/'. $item->id); ?>" title="Click to View Full Detail">...</a></td>*/ ?>
+                                       <td class="col-lg-1"><a href="<?php echo URL::to('submissions/edit/'. $item->id); ?>" class="btn btn-xs btn-success"><i class="fa fa-bar-chart-o"></i> Fill</a> </td>
+										 <?php endif; ?>
+                                        </tr>
+
+                                      <?php endforeach; ?>
+									  
+									  <tr>
+										  <th></th>
+
+
+                            <th class="text-right">Sub Total</th>
+				
+                            <th><?php echo String::formatMoney(Submission::unit_royality($value->id,$financial_year->id,$unit->id)); ?></th>
+                            <th><?php echo String::formatMoney(Submission::unit_taff($value->id,$financial_year->id,$unit->id)); ?></th>
+                            <th><?php echo String::formatMoney(Submission::unit_vat($value->id,$financial_year->id,$unit->id)); ?></th>
+                            <th><?php echo String::formatMoney(Submission::unit_cess($value->id,$financial_year->id,$unit->id)); ?></th>
+                            <th><?php echo String::formatMoney(Submission::unit_lmda($value->id,$financial_year->id,$unit->id)); ?></th>
+                            <th><?php echo String::formatMoney(Submission::unit_tree($value->id,$financial_year->id,$unit->id)); ?></th>
+									  </tr>
+                                    <?php endforeach; ?>
+                                  	     <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            </tr>
+                            <tr>
+                            <td></td>
+                            <th  class="text-right">Grand Total</th>
+
+                            <th><?php echo String::formatMoney(Submission::unit_total_royality($financial_year->id,$unit->id)); ?></th>
+                            <th><?php echo String::formatMoney(Submission::unit_total_taff($financial_year->id,$unit->id)); ?></th>
+                            <th><?php echo String::formatMoney(Submission::unit_total_vat($financial_year->id,$unit->id)); ?></th>
+                            <th><?php echo String::formatMoney(Submission::unit_total_cess($financial_year->id,$unit->id)); ?></th>
+                            <th><?php echo String::formatMoney(Submission::unit_total_lmda($financial_year->id,$unit->id)); ?></th>
+                            <th><?php echo String::formatMoney(Submission::unit_total_tree($financial_year->id,$unit->id)); ?></th>
+
+                            </tr>
+									  
+									  </tbody>
+                </table>
+				
+				<?php else: ?>
+                <div class="col-xs-12">
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <h4 class="text-center">No Data for <b><?php echo $financial_year->year; ?></b> in <?php echo Auth::user()->unit->name; ?> Unit. Please click the Button to Import</h4>
+                <br>
+                <div class="text-center">
+                  <a  href="<?php echo URL::to('submissions/import_references'); ?>" class="btn btn-success"><i class="fa fa-credit-card"></i> Import</a>
+               </div>
+               <br>
+               <br>
+               <br>
+               <br>
+               <br>
+               <br>
+               <br>
+                </div>
+                <?php endif; ?>
+                </div>
+                </div>
+                </div>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('action.layouts.default', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

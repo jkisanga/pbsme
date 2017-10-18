@@ -1,0 +1,470 @@
+[2017-09-14 04:20:16] production.ERROR: 500 - Undefined offset: 0 (View: C:\laragon\www\pbs\app\views\kpi_evaluation\create.blade.php) @ /kpiEvaluation/create/2
+exception 'ErrorException' with message 'Undefined offset: 0' in C:\laragon\www\pbs\app\models\KipEvaluation.php:15
+Stack trace:
+#0 C:\laragon\www\pbs\app\models\KipEvaluation.php(15): Illuminate\Exception\Handler->handleError(8, 'Undefined offse...', 'C:\\laragon\\www\\...', 15, Array)
+#1 C:\laragon\www\pbs\app\storage\views\611db4bab18275798deb6413729385cc(23): KpiEvaluation::getPossibleEnumValues(NULL)
+#2 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\View\Engines\PhpEngine.php(37): include('C:\\laragon\\www\\...')
+#3 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\View\Engines\CompilerEngine.php(56): Illuminate\View\Engines\PhpEngine->evaluatePath('C:\\laragon\\www\\...', Array)
+#4 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\View\View.php(140): Illuminate\View\Engines\CompilerEngine->get('C:\\laragon\\www\\...', Array)
+#5 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\View\View.php(109): Illuminate\View\View->getContents()
+#6 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\View\View.php(78): Illuminate\View\View->renderContents()
+#7 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Http\Response.php(43): Illuminate\View\View->render()
+#8 C:\laragon\www\pbs\vendor\symfony\http-foundation\Symfony\Component\HttpFoundation\Response.php(202): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#9 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1501): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#10 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1036): Illuminate\Routing\Router->prepareResponse(Object(Illuminate\Http\Request), Object(Illuminate\View\View))
+#11 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1001): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#12 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(775): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#13 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(745): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#14 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Session\Middleware.php(72): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#15 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Cookie\Queue.php(47): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#16 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Cookie\Guard.php(51): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#17 C:\laragon\www\pbs\vendor\stack\builder\src\Stack\StackedHttpKernel.php(23): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#18 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(641): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#19 C:\laragon\www\pbs\public\index.php(49): Illuminate\Foundation\Application->run()
+#20 {main}
+
+Next exception 'ErrorException' with message 'Undefined offset: 0 (View: C:\laragon\www\pbs\app\views\kpi_evaluation\create.blade.php)' in C:\laragon\www\pbs\app\models\KipEvaluation.php:15
+Stack trace:
+#0 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\View\Engines\PhpEngine.php(41): Illuminate\View\Engines\CompilerEngine->handleViewException(Object(ErrorException), 1)
+#1 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\View\Engines\CompilerEngine.php(56): Illuminate\View\Engines\PhpEngine->evaluatePath('C:\\laragon\\www\\...', Array)
+#2 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\View\View.php(140): Illuminate\View\Engines\CompilerEngine->get('C:\\laragon\\www\\...', Array)
+#3 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\View\View.php(109): Illuminate\View\View->getContents()
+#4 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\View\View.php(78): Illuminate\View\View->renderContents()
+#5 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Http\Response.php(43): Illuminate\View\View->render()
+#6 C:\laragon\www\pbs\vendor\symfony\http-foundation\Symfony\Component\HttpFoundation\Response.php(202): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#7 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1501): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#8 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1036): Illuminate\Routing\Router->prepareResponse(Object(Illuminate\Http\Request), Object(Illuminate\View\View))
+#9 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1001): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#10 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(775): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#11 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(745): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#12 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Session\Middleware.php(72): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#13 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Cookie\Queue.php(47): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#14 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Cookie\Guard.php(51): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#15 C:\laragon\www\pbs\vendor\stack\builder\src\Stack\StackedHttpKernel.php(23): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#16 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(641): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#17 C:\laragon\www\pbs\public\index.php(49): Illuminate\Foundation\Application->run()
+#18 {main} [] []
+[2017-09-14 04:21:37] production.ERROR: 500 - Undefined offset: 0 (View: C:\laragon\www\pbs\app\views\kpi_evaluation\create.blade.php) @ /kpiEvaluation/create/2
+exception 'ErrorException' with message 'Undefined offset: 0' in C:\laragon\www\pbs\app\models\KipEvaluation.php:15
+Stack trace:
+#0 C:\laragon\www\pbs\app\models\KipEvaluation.php(15): Illuminate\Exception\Handler->handleError(8, 'Undefined offse...', 'C:\\laragon\\www\\...', 15, Array)
+#1 C:\laragon\www\pbs\app\storage\views\611db4bab18275798deb6413729385cc(23): KpiEvaluation::getPossibleEnumValues(NULL)
+#2 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\View\Engines\PhpEngine.php(37): include('C:\\laragon\\www\\...')
+#3 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\View\Engines\CompilerEngine.php(56): Illuminate\View\Engines\PhpEngine->evaluatePath('C:\\laragon\\www\\...', Array)
+#4 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\View\View.php(140): Illuminate\View\Engines\CompilerEngine->get('C:\\laragon\\www\\...', Array)
+#5 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\View\View.php(109): Illuminate\View\View->getContents()
+#6 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\View\View.php(78): Illuminate\View\View->renderContents()
+#7 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Http\Response.php(43): Illuminate\View\View->render()
+#8 C:\laragon\www\pbs\vendor\symfony\http-foundation\Symfony\Component\HttpFoundation\Response.php(202): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#9 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1501): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#10 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1036): Illuminate\Routing\Router->prepareResponse(Object(Illuminate\Http\Request), Object(Illuminate\View\View))
+#11 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1001): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#12 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(775): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#13 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(745): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#14 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Session\Middleware.php(72): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#15 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Cookie\Queue.php(47): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#16 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Cookie\Guard.php(51): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#17 C:\laragon\www\pbs\vendor\stack\builder\src\Stack\StackedHttpKernel.php(23): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#18 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(641): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#19 C:\laragon\www\pbs\public\index.php(49): Illuminate\Foundation\Application->run()
+#20 {main}
+
+Next exception 'ErrorException' with message 'Undefined offset: 0 (View: C:\laragon\www\pbs\app\views\kpi_evaluation\create.blade.php)' in C:\laragon\www\pbs\app\models\KipEvaluation.php:15
+Stack trace:
+#0 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\View\Engines\PhpEngine.php(41): Illuminate\View\Engines\CompilerEngine->handleViewException(Object(ErrorException), 1)
+#1 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\View\Engines\CompilerEngine.php(56): Illuminate\View\Engines\PhpEngine->evaluatePath('C:\\laragon\\www\\...', Array)
+#2 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\View\View.php(140): Illuminate\View\Engines\CompilerEngine->get('C:\\laragon\\www\\...', Array)
+#3 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\View\View.php(109): Illuminate\View\View->getContents()
+#4 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\View\View.php(78): Illuminate\View\View->renderContents()
+#5 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Http\Response.php(43): Illuminate\View\View->render()
+#6 C:\laragon\www\pbs\vendor\symfony\http-foundation\Symfony\Component\HttpFoundation\Response.php(202): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#7 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1501): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#8 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1036): Illuminate\Routing\Router->prepareResponse(Object(Illuminate\Http\Request), Object(Illuminate\View\View))
+#9 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1001): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#10 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(775): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#11 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(745): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#12 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Session\Middleware.php(72): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#13 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Cookie\Queue.php(47): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#14 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Cookie\Guard.php(51): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#15 C:\laragon\www\pbs\vendor\stack\builder\src\Stack\StackedHttpKernel.php(23): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#16 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(641): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#17 C:\laragon\www\pbs\public\index.php(49): Illuminate\Foundation\Application->run()
+#18 {main} [] []
+[2017-09-14 04:27:22] production.ERROR: 500 - Undefined offset: 0 @ /kpiEvaluation/create/2
+exception 'ErrorException' with message 'Undefined offset: 0' in C:\laragon\www\pbs\app\models\KipEvaluation.php:15
+Stack trace:
+#0 C:\laragon\www\pbs\app\models\KipEvaluation.php(15): Illuminate\Exception\Handler->handleError(8, 'Undefined offse...', 'C:\\laragon\\www\\...', 15, Array)
+#1 C:\laragon\www\pbs\app\controllers\KpiEvaluationsController.php(25): KpiEvaluation::getPossibleEnumValues('HIV infection r...')
+#2 [internal function]: KpiEvaluationsController->create('2')
+#3 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Controller.php(231): call_user_func_array(Array, Array)
+#4 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php(93): Illuminate\Routing\Controller->callAction('create', Array)
+#5 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php(62): Illuminate\Routing\ControllerDispatcher->call(Object(KpiEvaluationsController), Object(Illuminate\Routing\Route), 'create')
+#6 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(967): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request), 'KpiEvaluationsC...', 'create')
+#7 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}('2')
+#8 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Route.php(109): call_user_func_array(Object(Closure), Array)
+#9 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1033): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#10 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1001): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#11 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(775): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#12 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(745): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#13 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Session\Middleware.php(72): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#14 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Cookie\Queue.php(47): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#15 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Cookie\Guard.php(51): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#16 C:\laragon\www\pbs\vendor\stack\builder\src\Stack\StackedHttpKernel.php(23): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#17 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(641): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#18 C:\laragon\www\pbs\public\index.php(49): Illuminate\Foundation\Application->run()
+#19 {main} [] []
+[2017-09-14 04:27:39] production.ERROR: 500 - Undefined offset: 0 @ /kpiEvaluation/create/2
+exception 'ErrorException' with message 'Undefined offset: 0' in C:\laragon\www\pbs\app\models\KipEvaluation.php:15
+Stack trace:
+#0 C:\laragon\www\pbs\app\models\KipEvaluation.php(15): Illuminate\Exception\Handler->handleError(8, 'Undefined offse...', 'C:\\laragon\\www\\...', 15, Array)
+#1 C:\laragon\www\pbs\app\controllers\KpiEvaluationsController.php(25): KpiEvaluation::getPossibleEnumValues('HIV infection r...')
+#2 [internal function]: KpiEvaluationsController->create('2')
+#3 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Controller.php(231): call_user_func_array(Array, Array)
+#4 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php(93): Illuminate\Routing\Controller->callAction('create', Array)
+#5 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php(62): Illuminate\Routing\ControllerDispatcher->call(Object(KpiEvaluationsController), Object(Illuminate\Routing\Route), 'create')
+#6 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(967): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request), 'KpiEvaluationsC...', 'create')
+#7 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}('2')
+#8 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Route.php(109): call_user_func_array(Object(Closure), Array)
+#9 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1033): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#10 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1001): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#11 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(775): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#12 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(745): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#13 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Session\Middleware.php(72): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#14 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Cookie\Queue.php(47): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#15 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Cookie\Guard.php(51): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#16 C:\laragon\www\pbs\vendor\stack\builder\src\Stack\StackedHttpKernel.php(23): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#17 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(641): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#18 C:\laragon\www\pbs\public\index.php(49): Illuminate\Foundation\Application->run()
+#19 {main} [] []
+[2017-09-14 04:29:58] production.ERROR: 500 - Trying to get property of non-object @ /kpiEvaluation/create/2
+exception 'ErrorException' with message 'Trying to get property of non-object' in C:\laragon\www\pbs\app\controllers\KpiEvaluationsController.php:24
+Stack trace:
+#0 C:\laragon\www\pbs\app\controllers\KpiEvaluationsController.php(24): Illuminate\Exception\Handler->handleError(8, 'Trying to get p...', 'C:\\laragon\\www\\...', 24, Array)
+#1 [internal function]: KpiEvaluationsController->create('2')
+#2 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Controller.php(231): call_user_func_array(Array, Array)
+#3 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php(93): Illuminate\Routing\Controller->callAction('create', Array)
+#4 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php(62): Illuminate\Routing\ControllerDispatcher->call(Object(KpiEvaluationsController), Object(Illuminate\Routing\Route), 'create')
+#5 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(967): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request), 'KpiEvaluationsC...', 'create')
+#6 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}('2')
+#7 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Route.php(109): call_user_func_array(Object(Closure), Array)
+#8 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1033): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#9 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1001): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#10 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(775): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#11 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(745): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#12 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Session\Middleware.php(72): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#13 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Cookie\Queue.php(47): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#14 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Cookie\Guard.php(51): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#15 C:\laragon\www\pbs\vendor\stack\builder\src\Stack\StackedHttpKernel.php(23): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#16 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(641): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#17 C:\laragon\www\pbs\public\index.php(49): Illuminate\Foundation\Application->run()
+#18 {main} [] []
+[2017-09-14 04:31:41] production.ERROR: 500 - Invalid argument supplied for foreach() @ /kpiEvaluation/create/2
+exception 'ErrorException' with message 'Invalid argument supplied for foreach()' in C:\laragon\www\pbs\app\controllers\KpiEvaluationsController.php:25
+Stack trace:
+#0 C:\laragon\www\pbs\app\controllers\KpiEvaluationsController.php(25): Illuminate\Exception\Handler->handleError(2, 'Invalid argumen...', 'C:\\laragon\\www\\...', 25, Array)
+#1 [internal function]: KpiEvaluationsController->create('2')
+#2 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Controller.php(231): call_user_func_array(Array, Array)
+#3 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php(93): Illuminate\Routing\Controller->callAction('create', Array)
+#4 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php(62): Illuminate\Routing\ControllerDispatcher->call(Object(KpiEvaluationsController), Object(Illuminate\Routing\Route), 'create')
+#5 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(967): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request), 'KpiEvaluationsC...', 'create')
+#6 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}('2')
+#7 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Route.php(109): call_user_func_array(Object(Closure), Array)
+#8 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1033): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#9 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1001): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#10 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(775): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#11 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(745): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#12 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Session\Middleware.php(72): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#13 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Cookie\Queue.php(47): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#14 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Cookie\Guard.php(51): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#15 C:\laragon\www\pbs\vendor\stack\builder\src\Stack\StackedHttpKernel.php(23): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#16 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(641): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#17 C:\laragon\www\pbs\public\index.php(49): Illuminate\Foundation\Application->run()
+#18 {main} [] []
+[2017-09-14 04:32:20] production.ERROR: 500 - Invalid argument supplied for foreach() @ /kpiEvaluation/create/2
+exception 'ErrorException' with message 'Invalid argument supplied for foreach()' in C:\laragon\www\pbs\app\controllers\KpiEvaluationsController.php:25
+Stack trace:
+#0 C:\laragon\www\pbs\app\controllers\KpiEvaluationsController.php(25): Illuminate\Exception\Handler->handleError(2, 'Invalid argumen...', 'C:\\laragon\\www\\...', 25, Array)
+#1 [internal function]: KpiEvaluationsController->create('2')
+#2 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Controller.php(231): call_user_func_array(Array, Array)
+#3 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php(93): Illuminate\Routing\Controller->callAction('create', Array)
+#4 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php(62): Illuminate\Routing\ControllerDispatcher->call(Object(KpiEvaluationsController), Object(Illuminate\Routing\Route), 'create')
+#5 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(967): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request), 'KpiEvaluationsC...', 'create')
+#6 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}('2')
+#7 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Route.php(109): call_user_func_array(Object(Closure), Array)
+#8 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1033): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#9 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1001): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#10 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(775): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#11 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(745): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#12 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Session\Middleware.php(72): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#13 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Cookie\Queue.php(47): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#14 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Cookie\Guard.php(51): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#15 C:\laragon\www\pbs\vendor\stack\builder\src\Stack\StackedHttpKernel.php(23): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#16 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(641): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#17 C:\laragon\www\pbs\public\index.php(49): Illuminate\Foundation\Application->run()
+#18 {main} [] []
+[2017-09-14 06:05:24] production.INFO: insert into `ref_kpi_fields` (`name`, `label`, `data_type`, `validation_rule`, `options`, `updated_at`, `created_at`) values ('measure', 'Meaasure', 'enum', 'required', '{'Low','High'}', '2017-09-14 06:05:24', '2017-09-14 06:05:24') {"url":"http://localhost:8000/pbs/public/refKpiFields/store","user":"Jovi Jovi","ip":"::1"} []
+[2017-09-14 06:05:24] production.ERROR: 500 - Argument 2 passed to Illuminate\Database\Schema\Blueprint::enum() must be of the type array, string given, called in C:\laragon\www\pbs\app\controllers\RefKpiFieldsController.php on line 56 and defined @ /refKpiFields/store
+exception 'ErrorException' with message 'Argument 2 passed to Illuminate\Database\Schema\Blueprint::enum() must be of the type array, string given, called in C:\laragon\www\pbs\app\controllers\RefKpiFieldsController.php on line 56 and defined' in C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Database\Schema\Blueprint.php:566
+Stack trace:
+#0 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Database\Schema\Blueprint.php(566): Illuminate\Exception\Handler->handleError(4096, 'Argument 2 pass...', 'C:\\laragon\\www\\...', 566, Array)
+#1 C:\laragon\www\pbs\app\controllers\RefKpiFieldsController.php(56): Illuminate\Database\Schema\Blueprint->enum('measure', '{'Low','High'}')
+#2 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Database\Schema\Blueprint.php(49): RefKpiFieldsController->{closure}(Object(Illuminate\Database\Schema\Blueprint))
+#3 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Database\Schema\Builder.php(186): Illuminate\Database\Schema\Blueprint->__construct('kpi_evaluations', Object(Closure))
+#4 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Database\Schema\Builder.php(94): Illuminate\Database\Schema\Builder->createBlueprint('kpi_evaluations', Object(Closure))
+#5 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Support\Facades\Facade.php(211): Illuminate\Database\Schema\Builder->table('kpi_evaluations', Object(Closure))
+#6 C:\laragon\www\pbs\app\controllers\RefKpiFieldsController.php(61): Illuminate\Support\Facades\Facade::__callStatic('table', Array)
+#7 C:\laragon\www\pbs\app\controllers\RefKpiFieldsController.php(61): Illuminate\Support\Facades\Schema::table('kpi_evaluations', Object(Closure))
+#8 [internal function]: RefKpiFieldsController->store()
+#9 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Controller.php(231): call_user_func_array(Array, Array)
+#10 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php(93): Illuminate\Routing\Controller->callAction('store', Array)
+#11 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php(62): Illuminate\Routing\ControllerDispatcher->call(Object(RefKpiFieldsController), Object(Illuminate\Routing\Route), 'store')
+#12 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(967): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request), 'RefKpiFieldsCon...', 'store')
+#13 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#14 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Route.php(109): call_user_func_array(Object(Closure), Array)
+#15 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1033): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#16 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1001): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#17 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(775): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#18 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(745): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#19 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Session\Middleware.php(72): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#20 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Cookie\Queue.php(47): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#21 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Cookie\Guard.php(51): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#22 C:\laragon\www\pbs\vendor\stack\builder\src\Stack\StackedHttpKernel.php(23): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#23 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(641): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#24 C:\laragon\www\pbs\public\index.php(49): Illuminate\Foundation\Application->run()
+#25 {main} [] []
+[2017-09-14 06:06:55] production.INFO: insert into `ref_kpi_fields` (`name`, `label`, `data_type`, `validation_rule`, `options`, `updated_at`, `created_at`) values ('measure', 'Meaasure', 'enum', 'required', ''Low','High'', '2017-09-14 06:06:55', '2017-09-14 06:06:55') {"url":"http://localhost:8000/pbs/public/refKpiFields/store","user":"Jovi Jovi","ip":"::1"} []
+[2017-09-14 06:06:55] production.ERROR: 500 - SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'Low','High'') not null' at line 1 (SQL: alter table `kpi_evaluations` add `measure` enum(''Low','High'') not null) @ /refKpiFields/store
+exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'Low','High'') not null' at line 1' in C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Database\Connection.php:369
+Stack trace:
+#0 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Database\Connection.php(369): PDO->prepare('alter table `kp...')
+#1 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Database\Connection.php(617): Illuminate\Database\Connection->Illuminate\Database\{closure}(Object(Illuminate\Database\MySqlConnection), 'alter table `kp...', Array)
+#2 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Database\Connection.php(581): Illuminate\Database\Connection->runQueryCallback('alter table `kp...', Array, Object(Closure))
+#3 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Database\Connection.php(370): Illuminate\Database\Connection->run('alter table `kp...', Array, Object(Closure))
+#4 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Database\Schema\Blueprint.php(63): Illuminate\Database\Connection->statement('alter table `kp...')
+#5 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Database\Schema\Builder.php(169): Illuminate\Database\Schema\Blueprint->build(Object(Illuminate\Database\MySqlConnection), Object(Illuminate\Database\Schema\Grammars\MySqlGrammar))
+#6 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Database\Schema\Builder.php(94): Illuminate\Database\Schema\Builder->build(Object(Illuminate\Database\Schema\Blueprint))
+#7 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Support\Facades\Facade.php(211): Illuminate\Database\Schema\Builder->table('kpi_evaluations', Object(Closure))
+#8 C:\laragon\www\pbs\app\controllers\RefKpiFieldsController.php(61): Illuminate\Support\Facades\Facade::__callStatic('table', Array)
+#9 C:\laragon\www\pbs\app\controllers\RefKpiFieldsController.php(61): Illuminate\Support\Facades\Schema::table('kpi_evaluations', Object(Closure))
+#10 [internal function]: RefKpiFieldsController->store()
+#11 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Controller.php(231): call_user_func_array(Array, Array)
+#12 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php(93): Illuminate\Routing\Controller->callAction('store', Array)
+#13 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php(62): Illuminate\Routing\ControllerDispatcher->call(Object(RefKpiFieldsController), Object(Illuminate\Routing\Route), 'store')
+#14 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(967): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request), 'RefKpiFieldsCon...', 'store')
+#15 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#16 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Route.php(109): call_user_func_array(Object(Closure), Array)
+#17 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1033): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#18 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1001): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#19 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(775): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#20 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(745): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#21 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Session\Middleware.php(72): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#22 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Cookie\Queue.php(47): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#23 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Cookie\Guard.php(51): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#24 C:\laragon\www\pbs\vendor\stack\builder\src\Stack\StackedHttpKernel.php(23): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#25 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(641): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#26 C:\laragon\www\pbs\public\index.php(49): Illuminate\Foundation\Application->run()
+#27 {main}
+
+Next exception 'Illuminate\Database\QueryException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'Low','High'') not null' at line 1 (SQL: alter table `kpi_evaluations` add `measure` enum(''Low','High'') not null)' in C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Database\Connection.php:625
+Stack trace:
+#0 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Database\Connection.php(581): Illuminate\Database\Connection->runQueryCallback('alter table `kp...', Array, Object(Closure))
+#1 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Database\Connection.php(370): Illuminate\Database\Connection->run('alter table `kp...', Array, Object(Closure))
+#2 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Database\Schema\Blueprint.php(63): Illuminate\Database\Connection->statement('alter table `kp...')
+#3 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Database\Schema\Builder.php(169): Illuminate\Database\Schema\Blueprint->build(Object(Illuminate\Database\MySqlConnection), Object(Illuminate\Database\Schema\Grammars\MySqlGrammar))
+#4 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Database\Schema\Builder.php(94): Illuminate\Database\Schema\Builder->build(Object(Illuminate\Database\Schema\Blueprint))
+#5 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Support\Facades\Facade.php(211): Illuminate\Database\Schema\Builder->table('kpi_evaluations', Object(Closure))
+#6 C:\laragon\www\pbs\app\controllers\RefKpiFieldsController.php(61): Illuminate\Support\Facades\Facade::__callStatic('table', Array)
+#7 C:\laragon\www\pbs\app\controllers\RefKpiFieldsController.php(61): Illuminate\Support\Facades\Schema::table('kpi_evaluations', Object(Closure))
+#8 [internal function]: RefKpiFieldsController->store()
+#9 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Controller.php(231): call_user_func_array(Array, Array)
+#10 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php(93): Illuminate\Routing\Controller->callAction('store', Array)
+#11 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php(62): Illuminate\Routing\ControllerDispatcher->call(Object(RefKpiFieldsController), Object(Illuminate\Routing\Route), 'store')
+#12 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(967): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request), 'RefKpiFieldsCon...', 'store')
+#13 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#14 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Route.php(109): call_user_func_array(Object(Closure), Array)
+#15 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1033): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#16 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1001): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#17 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(775): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#18 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(745): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#19 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Session\Middleware.php(72): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#20 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Cookie\Queue.php(47): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#21 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Cookie\Guard.php(51): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#22 C:\laragon\www\pbs\vendor\stack\builder\src\Stack\StackedHttpKernel.php(23): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#23 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(641): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#24 C:\laragon\www\pbs\public\index.php(49): Illuminate\Foundation\Application->run()
+#25 {main} [] []
+[2017-09-14 06:07:24] production.INFO: delete from `kpi_fields` where `field_id` = 4 {"url":"http://localhost:8000/pbs/public/refKpiFields/delete/4","user":"Jovi Jovi","ip":"::1"} []
+[2017-09-14 06:07:24] production.INFO: delete from `ref_kpi_fields` where `id` = 4 {"url":"http://localhost:8000/pbs/public/refKpiFields/delete/4","user":"Jovi Jovi","ip":"::1"} []
+[2017-09-14 06:07:28] production.INFO: delete from `kpi_fields` where `field_id` = 5 {"url":"http://localhost:8000/pbs/public/refKpiFields/delete/5","user":"Jovi Jovi","ip":"::1"} []
+[2017-09-14 06:07:28] production.INFO: delete from `ref_kpi_fields` where `id` = 5 {"url":"http://localhost:8000/pbs/public/refKpiFields/delete/5","user":"Jovi Jovi","ip":"::1"} []
+[2017-09-14 06:08:00] production.INFO: insert into `ref_kpi_fields` (`name`, `label`, `data_type`, `validation_rule`, `options`, `updated_at`, `created_at`) values ('measure', 'Measure', 'enum', 'required', 'Low,High', '2017-09-14 06:08:00', '2017-09-14 06:08:00') {"url":"http://localhost:8000/pbs/public/refKpiFields/store","user":"Jovi Jovi","ip":"::1"} []
+[2017-09-14 06:12:46] production.ERROR: 500 - syntax error, unexpected 'endif' (T_ENDIF) @ /kpiEvaluation/create/2
+exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected 'endif' (T_ENDIF)' in C:\laragon\www\pbs\app\storage\views\611db4bab18275798deb6413729385cc:30
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2017-09-14 06:13:01] production.INFO: insert into `kpi_fields` (`kpi_id`, `field_id`, `updated_at`, `created_at`) values ('2', '6', '2017-09-14 06:13:00', '2017-09-14 06:13:00') {"url":"http://localhost:8000/pbs/public/kpis/fields/2","user":"Jovi Jovi","ip":"::1"} []
+[2017-09-14 06:13:12] production.ERROR: 500 - syntax error, unexpected 'endif' (T_ENDIF) @ /kpiEvaluation/create/2
+exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected 'endif' (T_ENDIF)' in C:\laragon\www\pbs\app\storage\views\611db4bab18275798deb6413729385cc:30
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2017-09-14 06:18:32] production.ERROR: 500 - syntax error, unexpected '								', expecting case (T_CASE) or default (T_DEFAULT) or '}' @ /kpiEvaluation/create/2
+exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '								', expecting case (T_CASE) or default (T_DEFAULT) or '}'' in C:\laragon\www\pbs\app\storage\views\611db4bab18275798deb6413729385cc:21
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2017-09-14 06:27:59] production.INFO: insert into `kpi_evaluations` (`kpi_id`, `age_group`, `measure`, `year_id`, `unit_id`, `zone_id`, `user_id`, `updated_at`, `created_at`) values ('2', '1', '1', 3, 2, 1, 219, '2017-09-14 06:27:59', '2017-09-14 06:27:59') {"url":"http://localhost:8000/pbs/public/kpiEvaluation/store","user":"Jovi Jovi","ip":"::1"} []
+[2017-09-14 06:28:54] production.INFO: insert into `kpi_evaluations` (`kpi_id`, `age_group`, `measure`, `year_id`, `unit_id`, `zone_id`, `user_id`, `updated_at`, `created_at`) values ('2', '1', '0', 3, 2, 1, 219, '2017-09-14 06:28:54', '2017-09-14 06:28:54') {"url":"http://localhost:8000/pbs/public/kpiEvaluation/store","user":"Jovi Jovi","ip":"::1"} []
+[2017-09-14 06:36:01] production.INFO: insert into `kpi_evaluations` (`kpi_id`, `age_group`, `measure`, `year_id`, `unit_id`, `zone_id`, `user_id`, `updated_at`, `created_at`) values ('2', '1', '1', 3, 2, 1, 219, '2017-09-14 06:36:01', '2017-09-14 06:36:01') {"url":"http://localhost:8000/pbs/public/kpiEvaluation/store","user":"Jovi Jovi","ip":"::1"} []
+[2017-09-14 06:45:11] production.ERROR: 500 - var_dump() expects at least 1 parameter, 0 given (View: C:\laragon\www\pbs\app\views\kpi_evaluation\create.blade.php) @ /kpiEvaluation/create/2
+exception 'ErrorException' with message 'var_dump() expects at least 1 parameter, 0 given' in C:\laragon\www\pbs\app\storage\views\611db4bab18275798deb6413729385cc:21
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleError(2, 'var_dump() expe...', 'C:\\laragon\\www\\...', 21, Array)
+#1 C:\laragon\www\pbs\app\storage\views\611db4bab18275798deb6413729385cc(21): var_dump()
+#2 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\View\Engines\PhpEngine.php(37): include('C:\\laragon\\www\\...')
+#3 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\View\Engines\CompilerEngine.php(56): Illuminate\View\Engines\PhpEngine->evaluatePath('C:\\laragon\\www\\...', Array)
+#4 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\View\View.php(140): Illuminate\View\Engines\CompilerEngine->get('C:\\laragon\\www\\...', Array)
+#5 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\View\View.php(109): Illuminate\View\View->getContents()
+#6 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\View\View.php(78): Illuminate\View\View->renderContents()
+#7 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Http\Response.php(43): Illuminate\View\View->render()
+#8 C:\laragon\www\pbs\vendor\symfony\http-foundation\Symfony\Component\HttpFoundation\Response.php(202): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#9 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1501): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#10 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1036): Illuminate\Routing\Router->prepareResponse(Object(Illuminate\Http\Request), Object(Illuminate\View\View))
+#11 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1001): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#12 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(775): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#13 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(745): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#14 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Session\Middleware.php(72): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#15 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Cookie\Queue.php(47): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#16 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Cookie\Guard.php(51): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#17 C:\laragon\www\pbs\vendor\stack\builder\src\Stack\StackedHttpKernel.php(23): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#18 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(641): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#19 C:\laragon\www\pbs\public\index.php(49): Illuminate\Foundation\Application->run()
+#20 {main}
+
+Next exception 'ErrorException' with message 'var_dump() expects at least 1 parameter, 0 given (View: C:\laragon\www\pbs\app\views\kpi_evaluation\create.blade.php)' in C:\laragon\www\pbs\app\storage\views\611db4bab18275798deb6413729385cc:21
+Stack trace:
+#0 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\View\Engines\PhpEngine.php(41): Illuminate\View\Engines\CompilerEngine->handleViewException(Object(ErrorException), 1)
+#1 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\View\Engines\CompilerEngine.php(56): Illuminate\View\Engines\PhpEngine->evaluatePath('C:\\laragon\\www\\...', Array)
+#2 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\View\View.php(140): Illuminate\View\Engines\CompilerEngine->get('C:\\laragon\\www\\...', Array)
+#3 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\View\View.php(109): Illuminate\View\View->getContents()
+#4 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\View\View.php(78): Illuminate\View\View->renderContents()
+#5 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Http\Response.php(43): Illuminate\View\View->render()
+#6 C:\laragon\www\pbs\vendor\symfony\http-foundation\Symfony\Component\HttpFoundation\Response.php(202): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#7 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1501): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#8 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1036): Illuminate\Routing\Router->prepareResponse(Object(Illuminate\Http\Request), Object(Illuminate\View\View))
+#9 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1001): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#10 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(775): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#11 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(745): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#12 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Session\Middleware.php(72): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#13 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Cookie\Queue.php(47): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#14 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Cookie\Guard.php(51): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#15 C:\laragon\www\pbs\vendor\stack\builder\src\Stack\StackedHttpKernel.php(23): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#16 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(641): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#17 C:\laragon\www\pbs\public\index.php(49): Illuminate\Foundation\Application->run()
+#18 {main} [] []
+[2017-09-14 06:46:01] production.INFO: insert into `kpi_evaluations` (`kpi_id`, `age_group`, `measure`, `year_id`, `unit_id`, `zone_id`, `user_id`, `updated_at`, `created_at`) values ('2', '18-28', 'High', 3, 2, 1, 219, '2017-09-14 06:46:00', '2017-09-14 06:46:00') {"url":"http://localhost:8000/pbs/public/kpiEvaluation/store","user":"Jovi Jovi","ip":"::1"} []
+[2017-09-14 06:47:00] production.INFO: delete from `kpi_fields` where `field_id` = 6 {"url":"http://localhost:8000/pbs/public/refKpiFields/delete/6","user":"Jovi Jovi","ip":"::1"} []
+[2017-09-14 06:47:00] production.INFO: delete from `ref_kpi_fields` where `id` = 6 {"url":"http://localhost:8000/pbs/public/refKpiFields/delete/6","user":"Jovi Jovi","ip":"::1"} []
+[2017-09-14 06:47:46] production.INFO: insert into `ref_kpi_fields` (`name`, `label`, `data_type`, `validation_rule`, `options`, `updated_at`, `created_at`) values ('measure', 'Measure', 'enum', 'required', ''Low','High'', '2017-09-14 06:47:45', '2017-09-14 06:47:45') {"url":"http://localhost:8000/pbs/public/refKpiFields/store","user":"Jovi Jovi","ip":"::1"} []
+[2017-09-14 06:47:46] production.ERROR: 500 - SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'Low','High'') not null' at line 1 (SQL: alter table `kpi_evaluations` add `measure` enum(''Low','High'') not null) @ /refKpiFields/store
+exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'Low','High'') not null' at line 1' in C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Database\Connection.php:369
+Stack trace:
+#0 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Database\Connection.php(369): PDO->prepare('alter table `kp...')
+#1 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Database\Connection.php(617): Illuminate\Database\Connection->Illuminate\Database\{closure}(Object(Illuminate\Database\MySqlConnection), 'alter table `kp...', Array)
+#2 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Database\Connection.php(581): Illuminate\Database\Connection->runQueryCallback('alter table `kp...', Array, Object(Closure))
+#3 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Database\Connection.php(370): Illuminate\Database\Connection->run('alter table `kp...', Array, Object(Closure))
+#4 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Database\Schema\Blueprint.php(63): Illuminate\Database\Connection->statement('alter table `kp...')
+#5 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Database\Schema\Builder.php(169): Illuminate\Database\Schema\Blueprint->build(Object(Illuminate\Database\MySqlConnection), Object(Illuminate\Database\Schema\Grammars\MySqlGrammar))
+#6 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Database\Schema\Builder.php(94): Illuminate\Database\Schema\Builder->build(Object(Illuminate\Database\Schema\Blueprint))
+#7 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Support\Facades\Facade.php(211): Illuminate\Database\Schema\Builder->table('kpi_evaluations', Object(Closure))
+#8 C:\laragon\www\pbs\app\controllers\RefKpiFieldsController.php(61): Illuminate\Support\Facades\Facade::__callStatic('table', Array)
+#9 C:\laragon\www\pbs\app\controllers\RefKpiFieldsController.php(61): Illuminate\Support\Facades\Schema::table('kpi_evaluations', Object(Closure))
+#10 [internal function]: RefKpiFieldsController->store()
+#11 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Controller.php(231): call_user_func_array(Array, Array)
+#12 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php(93): Illuminate\Routing\Controller->callAction('store', Array)
+#13 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php(62): Illuminate\Routing\ControllerDispatcher->call(Object(RefKpiFieldsController), Object(Illuminate\Routing\Route), 'store')
+#14 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(967): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request), 'RefKpiFieldsCon...', 'store')
+#15 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#16 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Route.php(109): call_user_func_array(Object(Closure), Array)
+#17 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1033): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#18 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1001): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#19 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(775): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#20 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(745): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#21 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Session\Middleware.php(72): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#22 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Cookie\Queue.php(47): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#23 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Cookie\Guard.php(51): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#24 C:\laragon\www\pbs\vendor\stack\builder\src\Stack\StackedHttpKernel.php(23): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#25 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(641): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#26 C:\laragon\www\pbs\public\index.php(49): Illuminate\Foundation\Application->run()
+#27 {main}
+
+Next exception 'Illuminate\Database\QueryException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'Low','High'') not null' at line 1 (SQL: alter table `kpi_evaluations` add `measure` enum(''Low','High'') not null)' in C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Database\Connection.php:625
+Stack trace:
+#0 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Database\Connection.php(581): Illuminate\Database\Connection->runQueryCallback('alter table `kp...', Array, Object(Closure))
+#1 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Database\Connection.php(370): Illuminate\Database\Connection->run('alter table `kp...', Array, Object(Closure))
+#2 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Database\Schema\Blueprint.php(63): Illuminate\Database\Connection->statement('alter table `kp...')
+#3 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Database\Schema\Builder.php(169): Illuminate\Database\Schema\Blueprint->build(Object(Illuminate\Database\MySqlConnection), Object(Illuminate\Database\Schema\Grammars\MySqlGrammar))
+#4 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Database\Schema\Builder.php(94): Illuminate\Database\Schema\Builder->build(Object(Illuminate\Database\Schema\Blueprint))
+#5 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Support\Facades\Facade.php(211): Illuminate\Database\Schema\Builder->table('kpi_evaluations', Object(Closure))
+#6 C:\laragon\www\pbs\app\controllers\RefKpiFieldsController.php(61): Illuminate\Support\Facades\Facade::__callStatic('table', Array)
+#7 C:\laragon\www\pbs\app\controllers\RefKpiFieldsController.php(61): Illuminate\Support\Facades\Schema::table('kpi_evaluations', Object(Closure))
+#8 [internal function]: RefKpiFieldsController->store()
+#9 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Controller.php(231): call_user_func_array(Array, Array)
+#10 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php(93): Illuminate\Routing\Controller->callAction('store', Array)
+#11 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php(62): Illuminate\Routing\ControllerDispatcher->call(Object(RefKpiFieldsController), Object(Illuminate\Routing\Route), 'store')
+#12 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(967): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request), 'RefKpiFieldsCon...', 'store')
+#13 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#14 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Route.php(109): call_user_func_array(Object(Closure), Array)
+#15 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1033): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#16 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1001): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#17 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(775): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#18 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(745): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#19 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Session\Middleware.php(72): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#20 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Cookie\Queue.php(47): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#21 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Cookie\Guard.php(51): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#22 C:\laragon\www\pbs\vendor\stack\builder\src\Stack\StackedHttpKernel.php(23): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#23 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(641): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#24 C:\laragon\www\pbs\public\index.php(49): Illuminate\Foundation\Application->run()
+#25 {main} [] []
+[2017-09-14 06:48:08] production.INFO: delete from `kpi_fields` where `field_id` = 7 {"url":"http://localhost:8000/pbs/public/refKpiFields/delete/7","user":"Jovi Jovi","ip":"::1"} []
+[2017-09-14 06:48:08] production.INFO: delete from `ref_kpi_fields` where `id` = 7 {"url":"http://localhost:8000/pbs/public/refKpiFields/delete/7","user":"Jovi Jovi","ip":"::1"} []
+[2017-09-14 06:55:02] production.ERROR: 500 - syntax error, unexpected ')' @ /refKpiFields/create
+exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ')'' in C:\laragon\www\pbs\app\controllers\RefKpiFieldsController.php:56
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2017-09-14 06:55:06] production.ERROR: 500 - syntax error, unexpected ')' @ /refKpiFields/create
+exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ')'' in C:\laragon\www\pbs\app\controllers\RefKpiFieldsController.php:56
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2017-09-14 06:55:53] production.INFO: insert into `ref_kpi_fields` (`name`, `label`, `data_type`, `validation_rule`, `options`, `updated_at`, `created_at`) values ('measure', 'Measure', 'enum', '', 'Low,High', '2017-09-14 06:55:53', '2017-09-14 06:55:53') {"url":"http://localhost:8000/pbs/public/refKpiFields/store","user":"Jovi Jovi","ip":"::1"} []
+[2017-09-14 06:56:32] production.INFO: insert into `kpi_fields` (`kpi_id`, `field_id`, `updated_at`, `created_at`) values ('2', '8', '2017-09-14 06:56:32', '2017-09-14 06:56:32') {"url":"http://localhost:8000/pbs/public/kpis/fields/2","user":"Jovi Jovi","ip":"::1"} []
+[2017-09-14 06:56:44] production.INFO: insert into `kpi_evaluations` (`kpi_id`, `age_group`, `measure`, `year_id`, `unit_id`, `zone_id`, `user_id`, `updated_at`, `created_at`) values ('2', '18-28', 'High', 3, 2, 1, 219, '2017-09-14 06:56:44', '2017-09-14 06:56:44') {"url":"http://localhost:8000/pbs/public/kpiEvaluation/store","user":"Jovi Jovi","ip":"::1"} []
+[2017-09-14 07:01:49] production.INFO: insert into `ref_kpi_fields` (`name`, `label`, `data_type`, `validation_rule`, `updated_at`, `created_at`) values ('evaluated', 'Is evaluated', 'boolean', '', '2017-09-14 07:01:49', '2017-09-14 07:01:49') {"url":"http://localhost:8000/pbs/public/refKpiFields/store","user":"Jovi Jovi","ip":"::1"} []
+[2017-09-14 07:02:04] production.INFO: insert into `kpi_fields` (`kpi_id`, `field_id`, `updated_at`, `created_at`) values ('2', '9', '2017-09-14 07:02:03', '2017-09-14 07:02:03') {"url":"http://localhost:8000/pbs/public/kpis/fields/2","user":"Jovi Jovi","ip":"::1"} []
+[2017-09-14 07:03:35] production.INFO: insert into `kpi_evaluations` (`kpi_id`, `age_group`, `measure`, `year_id`, `unit_id`, `zone_id`, `user_id`, `updated_at`, `created_at`) values ('2', 'above 18', 'Low', 3, 2, 1, 219, '2017-09-14 07:03:35', '2017-09-14 07:03:35') {"url":"http://localhost:8000/pbs/public/kpiEvaluation/store","user":"Jovi Jovi","ip":"::1"} []
+[2017-09-14 07:04:22] production.INFO: insert into `kpi_evaluations` (`kpi_id`, `age_group`, `measure`, `year_id`, `unit_id`, `zone_id`, `user_id`, `updated_at`, `created_at`) values ('2', 'above 18', 'High', 3, 2, 1, 219, '2017-09-14 07:04:22', '2017-09-14 07:04:22') {"url":"http://localhost:8000/pbs/public/kpiEvaluation/store","user":"Jovi Jovi","ip":"::1"} []
+[2017-09-14 07:05:34] production.INFO: insert into `kpi_evaluations` (`kpi_id`, `age_group`, `measure`, `evaluated`, `year_id`, `unit_id`, `zone_id`, `user_id`, `updated_at`, `created_at`) values ('2', '18-28', 'High', '1', 3, 2, 1, 219, '2017-09-14 07:05:34', '2017-09-14 07:05:34') {"url":"http://localhost:8000/pbs/public/kpiEvaluation/store","user":"Jovi Jovi","ip":"::1"} []
+[2017-09-14 08:32:45] production.INFO: delete from `kpi_fields` where `field_id` = 8 {"url":"http://localhost:8000/pbs/public/refKpiFields/delete/8","user":"Jovi Jovi","ip":"::1"} []
+[2017-09-14 08:32:45] production.INFO: delete from `ref_kpi_fields` where `id` = 8 {"url":"http://localhost:8000/pbs/public/refKpiFields/delete/8","user":"Jovi Jovi","ip":"::1"} []
+[2017-09-14 08:32:50] production.INFO: delete from `kpi_fields` where `field_id` = 9 {"url":"http://localhost:8000/pbs/public/refKpiFields/delete/9","user":"Jovi Jovi","ip":"::1"} []
+[2017-09-14 08:32:50] production.INFO: delete from `ref_kpi_fields` where `id` = 9 {"url":"http://localhost:8000/pbs/public/refKpiFields/delete/9","user":"Jovi Jovi","ip":"::1"} []
+[2017-09-14 08:32:54] production.INFO: delete from `kpi_fields` where `field_id` = 3 {"url":"http://localhost:8000/pbs/public/refKpiFields/delete/3","user":"Jovi Jovi","ip":"::1"} []
+[2017-09-14 08:32:54] production.INFO: delete from `ref_kpi_fields` where `id` = 3 {"url":"http://localhost:8000/pbs/public/refKpiFields/delete/3","user":"Jovi Jovi","ip":"::1"} []
+[2017-09-14 09:22:22] production.INFO: insert into `ref_kpi_fields` (`name`, `label`, `data_type`, `validation_rule`, `options`, `updated_at`, `created_at`) values ('quarter', 'Quarter', 'enum', 'required', 'First,Second,Third,Forth', '2017-09-14 09:22:22', '2017-09-14 09:22:22') {"url":"http://localhost:8000/pbs/public/refKpiFields/store","user":"Jovi Jovi","ip":"::1"} []
+[2017-09-14 09:23:11] production.INFO: insert into `ref_kpi_fields` (`name`, `label`, `data_type`, `validation_rule`, `options`, `updated_at`, `created_at`) values ('age_group', 'Age Group', 'enum', '', '>18,19-35,36-45,46-60', '2017-09-14 09:23:11', '2017-09-14 09:23:11') {"url":"http://localhost:8000/pbs/public/refKpiFields/store","user":"Jovi Jovi","ip":"::1"} []
+[2017-09-14 09:23:43] production.INFO: insert into `ref_kpi_fields` (`name`, `label`, `data_type`, `validation_rule`, `updated_at`, `created_at`) values ('no_staff_male', 'Number of Male', 'integer', '', '2017-09-14 09:23:43', '2017-09-14 09:23:43') {"url":"http://localhost:8000/pbs/public/refKpiFields/store","user":"Jovi Jovi","ip":"::1"} []
+[2017-09-14 09:24:10] production.INFO: insert into `ref_kpi_fields` (`name`, `label`, `data_type`, `validation_rule`, `updated_at`, `created_at`) values ('no_staff_female', 'Number of Female', 'integer', '', '2017-09-14 09:24:10', '2017-09-14 09:24:10') {"url":"http://localhost:8000/pbs/public/refKpiFields/store","user":"Jovi Jovi","ip":"::1"} []
+[2017-09-14 09:24:37] production.INFO: insert into `ref_kpi_fields` (`name`, `label`, `data_type`, `validation_rule`, `updated_at`, `created_at`) values ('no_hiv_male', 'Number of Male with HIV', 'integer', '', '2017-09-14 09:24:37', '2017-09-14 09:24:37') {"url":"http://localhost:8000/pbs/public/refKpiFields/store","user":"Jovi Jovi","ip":"::1"} []
+[2017-09-14 09:25:00] production.INFO: insert into `ref_kpi_fields` (`name`, `label`, `data_type`, `validation_rule`, `updated_at`, `created_at`) values ('no_hiv_female', 'Number of Female with HIV', 'integer', '', '2017-09-14 09:25:00', '2017-09-14 09:25:00') {"url":"http://localhost:8000/pbs/public/refKpiFields/store","user":"Jovi Jovi","ip":"::1"} []
+[2017-09-14 09:25:16] production.INFO: insert into `ref_kpi_fields` (`name`, `label`, `data_type`, `validation_rule`, `updated_at`, `created_at`) values ('remarks', 'Remarks', 'string', '', '2017-09-14 09:25:15', '2017-09-14 09:25:15') {"url":"http://localhost:8000/pbs/public/refKpiFields/store","user":"Jovi Jovi","ip":"::1"} []
+[2017-09-14 09:26:30] production.INFO: insert into `kpi_fields` (`kpi_id`, `field_id`, `updated_at`, `created_at`) values ('2', '10', '2017-09-14 09:26:30', '2017-09-14 09:26:30') {"url":"http://localhost:8000/pbs/public/kpis/fields/2","user":"Jovi Jovi","ip":"::1"} []
+[2017-09-14 09:26:30] production.INFO: insert into `kpi_fields` (`kpi_id`, `field_id`, `updated_at`, `created_at`) values ('2', '11', '2017-09-14 09:26:30', '2017-09-14 09:26:30') {"url":"http://localhost:8000/pbs/public/kpis/fields/2","user":"Jovi Jovi","ip":"::1"} []
+[2017-09-14 09:26:30] production.INFO: insert into `kpi_fields` (`kpi_id`, `field_id`, `updated_at`, `created_at`) values ('2', '12', '2017-09-14 09:26:30', '2017-09-14 09:26:30') {"url":"http://localhost:8000/pbs/public/kpis/fields/2","user":"Jovi Jovi","ip":"::1"} []
+[2017-09-14 09:26:30] production.INFO: insert into `kpi_fields` (`kpi_id`, `field_id`, `updated_at`, `created_at`) values ('2', '13', '2017-09-14 09:26:30', '2017-09-14 09:26:30') {"url":"http://localhost:8000/pbs/public/kpis/fields/2","user":"Jovi Jovi","ip":"::1"} []
+[2017-09-14 09:26:30] production.INFO: insert into `kpi_fields` (`kpi_id`, `field_id`, `updated_at`, `created_at`) values ('2', '14', '2017-09-14 09:26:30', '2017-09-14 09:26:30') {"url":"http://localhost:8000/pbs/public/kpis/fields/2","user":"Jovi Jovi","ip":"::1"} []
+[2017-09-14 09:26:30] production.INFO: insert into `kpi_fields` (`kpi_id`, `field_id`, `updated_at`, `created_at`) values ('2', '15', '2017-09-14 09:26:30', '2017-09-14 09:26:30') {"url":"http://localhost:8000/pbs/public/kpis/fields/2","user":"Jovi Jovi","ip":"::1"} []
+[2017-09-14 09:26:30] production.INFO: insert into `kpi_fields` (`kpi_id`, `field_id`, `updated_at`, `created_at`) values ('2', '16', '2017-09-14 09:26:30', '2017-09-14 09:26:30') {"url":"http://localhost:8000/pbs/public/kpis/fields/2","user":"Jovi Jovi","ip":"::1"} []
+[2017-09-14 09:28:30] production.INFO: insert into `kpi_evaluations` (`kpi_id`, `quarter`, `age_group`, `no_staff_male`, `no_staff_female`, `no_hiv_male`, `no_hiv_female`, `remarks`, `year_id`, `unit_id`, `zone_id`, `user_id`, `updated_at`, `created_at`) values ('2', 'First', '>18', '56', '43', '67', '87', 'Monitored', 3, 2, 1, 219, '2017-09-14 09:28:30', '2017-09-14 09:28:30') {"url":"http://localhost:8000/pbs/public/kpiEvaluation/store","user":"Jovi Jovi","ip":"::1"} []

@@ -1,0 +1,51 @@
+<?php $__env->startSection('content'); ?>
+<div class="col-lg-12">
+    <div class="panel panel-green">
+        <div class="panel-heading">List of Targets
+</div>
+        <div class="panel-body">
+        <?php if($is_zone_submitted == true): ?>
+			 <div class="alert alert-warning alert-block"> Budget for zone level for the current year has been submitted</div>
+		 <?php else: ?>
+
+        <?php if($submitted == true): ?>
+
+            <div class="alert alert-warning alert-block">Budget for  <strong><?php echo $current_unit->name; ?></strong> for the current year has been submitted</div>
+
+        <?php else: ?>
+            <table class=" dt table table-hover table-striped">
+                <thead>
+                <tr>
+                    <th>Target No</th>
+                    <th>Target Description</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php foreach($objectives as $objective): ?>
+                <tr>
+                   <th>OBJECTIVE <?php echo $objective->ob_code; ?></th>
+                   <th colspan="3"><?php echo $objective->ob_description; ?></th>
+                </tr>
+                <?php foreach(Target::where('objective_id', '=', $objective->id)->orderBy('target_no')->get() as $item): ?>
+                <tr>
+                    <td><?php echo $item->target_no; ?></td>
+                    <td><?php echo $item->ta_description; ?></td>
+                  <td><a href="<?php echo URL::to('add_activity/'.$item->id); ?>" class="btn btn-info">Add Activity</a> </td>
+                </tr>
+                <?php endforeach; ?>
+                <?php endforeach; ?>
+                </tbody>
+		</table>
+		<?php endif; ?>
+		
+		 <?php endif; ?>
+		</div>
+		
+		</div>
+		</div>
+<?php $__env->stopSection(); ?>
+
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('action.layouts.default', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

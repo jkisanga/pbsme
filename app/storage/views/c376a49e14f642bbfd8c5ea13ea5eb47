@@ -1,0 +1,66 @@
+<?php $__env->startSection('content'); ?>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-green" style="background-color: rgba(50, 13, 116, 0.04)">
+            <div class="panel-heading">
+                Feed Submission</div>
+            <div class="panel-body pan">
+                <form action="<?php echo URL::to('submissions/update/'. $submission->id); ?>" method="post">
+                <div class="form-body pal">
+                 <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>" />
+<div class="row">
+<div class="box-body">
+                  <div class="row">
+                    <div class="col-xs-3"><label>Item Code</label>
+                      <input type="text" class="form-control" readonly name="item_code" value="<?php echo $submission->item_code; ?>">
+                    </div>
+                    <div class="col-xs-9"><label>Type of Fees</label>
+                      <input type="text" class="form-control" readonly name="type_of_fee" value="<?php echo $submission->type_of_fee; ?>">
+                    </div>
+                  </div><br />
+                  <h4>REVENUE PROJECTION FOR 2016/2017 (TSHS)</h4><br />
+
+                   <div class="row">
+                  <div class="col-xs-3"><label>Unit Price (Tshs.)</label>
+                    <input type="text" class="form-control" name="unit_price" value="<?php echo $submission->unit_price; ?>" readonly>
+                  </div>
+                  <div class="col-xs-3"><label>Quantity</label>
+                    <input type="text" class="form-control" name="quantity" value="<?php echo $submission->quantity; ?>" readonly>
+                  </div>
+                  <div class="col-xs-3"><label>Total Revenue (Tshs.)</label>
+                    <input type="text" class="form-control"  name="total_revenue" value="<?php echo $submission->total_revenue; ?>" readonly>
+                  </div>
+                </div>
+                <br />
+                  <h4 class="center">QUARTERLY PROJECTION (2016/2017)</h4><br />
+                   <div class="row">
+                  <div class="col-xs-3"><label>Quarter I</label>
+                    <input type="text" class="form-control" name="quarter_1" value="<?php echo $submission->quarter_1; ?>" readonly>
+                  </div>
+                  <div class="col-xs-3"><label>Quarter II</label>
+                    <input type="text" class="form-control" name="quarter_2" value="<?php echo $submission->quarter_2; ?>" readonly>
+                  </div>
+                  <div class="col-xs-3"><label>Quarter III</label>
+                    <input type="text" class="form-control" name="quarter_3" value="<?php echo $submission->quarter_3; ?>"  readonly>
+                  </div>
+                  <div class="col-xs-3"><label>Quarter IV</label>
+                    <input type="text" class="form-control" name="quarter_4" value="<?php echo $submission->quarter_4; ?>" readonly>
+                  </div>
+                </div><hr/>
+                <br />
+
+                </div>
+                </div>
+                </div><hr/>
+                <div class="box-footer">
+              <a href="<?php echo URL::to('submissions/index'); ?>" class="btn btn-primary pull-left">Back</a>
+                                    <a href="<?php echo URL::to('submissions/edit/'.$submission->id); ?>" class="btn btn-primary pull-right">Edit Feed</a>
+                                  </div>
+ </form>
+ </div>
+</div>
+</div>
+</div>
+</div>
+ <?php $__env->stopSection(); ?>
+<?php echo $__env->make('action.layouts.default', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

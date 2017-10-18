@@ -1,0 +1,51 @@
+{
+    "name": "TFS-PBS",
+    "description": "Planning and Budgeting System",
+    "keywords": ["laravel", "template"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "TFS",
+            "homepage": "http://www.tfs.go.tz"
+        }
+    ],
+    "require": {
+        "laravel/framework": "~4.2",
+        "zizaco/confide": "~4.0@dev",
+        "way/generators": "~2.0",
+        "phpexcel/phpexcel": "dev-master",
+        "zizaco/entrust": "~1.2",
+        "yajra/laravel-oci8": "~1.5",
+        "yajra/laravel-datatables-oracle": "*",
+        "maatwebsite/excel": "~1.3.0",
+        "barryvdh/laravel-dompdf": "*",
+        "intervention/image": "dev-master",
+        "rap2hpoutre/laravel-log-viewer": "^0.7.0"
+    },
+
+    "autoload": {
+        "classmap": [
+            "app/commands",
+            "app/controllers",
+            "app/library",
+            "app/models",
+            "app/database/migrations",
+            "app/database/seeds",
+            "app/tests/library"
+        ]
+    },
+    "scripts": {
+        "pre-update-cmd": [
+            "php artisan clear-compiled"
+        ],
+        "post-install-cmd": [
+            "php artisan optimize"
+        ],
+        "post-update-cmd": [
+            "php artisan optimize"
+        ]
+    },
+    "config": {
+        "preferred-install": "dist"
+    }
+}

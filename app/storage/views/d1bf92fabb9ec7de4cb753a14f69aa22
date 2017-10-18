@@ -1,0 +1,44 @@
+  <form action="<?php echo URL::to('budget/zone_submit'); ?>" method="post">
+	 <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>" />
+       <input  type="hidden"  name="year_id" class="form-control" value="<?php echo $financial_year->id; ?>" /> 
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h5><?php echo $unit->zone; ?> (<?php echo $unit->initial; ?>) </h5>
+			</div>
+
+			<div class="panel-body">
+
+			 <div class="row">
+						 <div class="col-md-4">Total Number of Units <span class="badge badge-success"><?php echo count($zoneUnits); ?></span> </div>
+						 <div class="col-md-8">
+							<?php foreach($zoneUnits as $unit): ?>
+								<?php echo Str::upper($unit->name); ?>|
+							<?php endforeach; ?>
+						 </div>
+					  </div><hr>
+					   <div class="row">
+						 <div class="col-md-4">Units Submitted Budget <span class="badge badge-success"><?php echo count($unitsSubmittedBudget); ?></span> </div>
+						 <div class="col-md-8">
+							<?php foreach($unitsSubmittedBudget as $unit): ?>
+								<?php echo Str::upper($unit->name); ?>|
+							<?php endforeach; ?>
+						 </div>
+					  </div><hr>
+
+					   <div class="row">
+						 <div class="col-md-4">Units Not Submitted Budget <span class="badge badge-success"><?php echo count($zoneUnits) - count($unitsSubmittedBudget); ?></span> </div>
+							  <div class="col-md-4">
+							  <?php if(count($zoneUnits)== count($unitsSubmittedBudget)): ?>
+								  
+							   <?php echo $is_submitted ? '<div class="alert alert-success">Submitted</div>' : '<input  type="submit"  class="btn btn-primary" value="Submit"/>	'; ?>
+
+									    																											  					
+							   <?php else: ?>
+								   <div class="alert alert-warning">All Units have not submitted</div>
+									
+							   <?php endif; ?>
+                              </div>
+					  </div>
+			</div>
+		</div>
+</form>

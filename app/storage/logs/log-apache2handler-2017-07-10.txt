@@ -1,0 +1,81 @@
+[2017-07-10 04:22:36] production.INFO: update `users` set `unit_id` = '1', `updated_at` = '2017-07-10 04:22:36' where `id` = 219 {"url":"http://localhost:8080/pbs/public/admin/users/219/edit","user":"Jovi Jovi","ip":"::1"} []
+[2017-07-10 04:43:24] production.ERROR: 500 - View [kpis.no_data] not found. @ /kpis/KPIDashboard/2
+exception 'InvalidArgumentException' with message 'View [kpis.no_data] not found.' in C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\View\FileViewFinder.php:146
+Stack trace:
+#0 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\View\FileViewFinder.php(83): Illuminate\View\FileViewFinder->findInPaths('kpis.no_data', Array)
+#1 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\View\Factory.php(124): Illuminate\View\FileViewFinder->find('kpis.no_data')
+#2 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Support\Facades\Facade.php(211): Illuminate\View\Factory->make('kpis.no_data', Array)
+#3 C:\laragon\www\pbs\app\controllers\KpisController.php(144): Illuminate\Support\Facades\Facade::__callStatic('make', Array)
+#4 C:\laragon\www\pbs\app\controllers\KpisController.php(144): Illuminate\Support\Facades\View::make('kpis.no_data', Array)
+#5 [internal function]: KpisController->KPIDashboard('2')
+#6 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Controller.php(231): call_user_func_array(Array, Array)
+#7 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php(93): Illuminate\Routing\Controller->callAction('KPIDashboard', Array)
+#8 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php(62): Illuminate\Routing\ControllerDispatcher->call(Object(KpisController), Object(Illuminate\Routing\Route), 'KPIDashboard')
+#9 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(967): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request), 'KpisController', 'KPIDashboard')
+#10 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}('2')
+#11 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Route.php(109): call_user_func_array(Object(Closure), Array)
+#12 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1033): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#13 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1001): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#14 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(775): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#15 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(745): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#16 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Session\Middleware.php(72): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#17 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Cookie\Queue.php(47): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#18 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Cookie\Guard.php(51): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#19 C:\laragon\www\pbs\vendor\stack\builder\src\Stack\StackedHttpKernel.php(23): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#20 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(641): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#21 C:\laragon\www\pbs\public\index.php(49): Illuminate\Foundation\Application->run()
+#22 {main} [] []
+[2017-07-10 04:43:37] production.ERROR: 500 - View [kpis.no_data] not found. @ /kpis/KPIDashboard/2
+exception 'InvalidArgumentException' with message 'View [kpis.no_data] not found.' in C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\View\FileViewFinder.php:146
+Stack trace:
+#0 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\View\FileViewFinder.php(83): Illuminate\View\FileViewFinder->findInPaths('kpis.no_data', Array)
+#1 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\View\Factory.php(124): Illuminate\View\FileViewFinder->find('kpis.no_data')
+#2 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Support\Facades\Facade.php(211): Illuminate\View\Factory->make('kpis.no_data', Array)
+#3 C:\laragon\www\pbs\app\controllers\KpisController.php(144): Illuminate\Support\Facades\Facade::__callStatic('make', Array)
+#4 C:\laragon\www\pbs\app\controllers\KpisController.php(144): Illuminate\Support\Facades\View::make('kpis.no_data', Array)
+#5 [internal function]: KpisController->KPIDashboard('2')
+#6 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Controller.php(231): call_user_func_array(Array, Array)
+#7 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php(93): Illuminate\Routing\Controller->callAction('KPIDashboard', Array)
+#8 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php(62): Illuminate\Routing\ControllerDispatcher->call(Object(KpisController), Object(Illuminate\Routing\Route), 'KPIDashboard')
+#9 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(967): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request), 'KpisController', 'KPIDashboard')
+#10 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}('2')
+#11 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Route.php(109): call_user_func_array(Object(Closure), Array)
+#12 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1033): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#13 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1001): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#14 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(775): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#15 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(745): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#16 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Session\Middleware.php(72): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#17 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Cookie\Queue.php(47): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#18 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Cookie\Guard.php(51): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#19 C:\laragon\www\pbs\vendor\stack\builder\src\Stack\StackedHttpKernel.php(23): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#20 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(641): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#21 C:\laragon\www\pbs\public\index.php(49): Illuminate\Foundation\Application->run()
+#22 {main} [] []
+[2017-07-10 04:44:09] production.ERROR: 500 - View [kpis.no_data] not found. @ /kpis/KPIDashboard/2
+exception 'InvalidArgumentException' with message 'View [kpis.no_data] not found.' in C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\View\FileViewFinder.php:146
+Stack trace:
+#0 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\View\FileViewFinder.php(83): Illuminate\View\FileViewFinder->findInPaths('kpis.no_data', Array)
+#1 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\View\Factory.php(124): Illuminate\View\FileViewFinder->find('kpis.no_data')
+#2 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Support\Facades\Facade.php(211): Illuminate\View\Factory->make('kpis.no_data', Array)
+#3 C:\laragon\www\pbs\app\controllers\KpisController.php(144): Illuminate\Support\Facades\Facade::__callStatic('make', Array)
+#4 C:\laragon\www\pbs\app\controllers\KpisController.php(144): Illuminate\Support\Facades\View::make('kpis.no_data', Array)
+#5 [internal function]: KpisController->KPIDashboard('2')
+#6 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Controller.php(231): call_user_func_array(Array, Array)
+#7 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php(93): Illuminate\Routing\Controller->callAction('KPIDashboard', Array)
+#8 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php(62): Illuminate\Routing\ControllerDispatcher->call(Object(KpisController), Object(Illuminate\Routing\Route), 'KPIDashboard')
+#9 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(967): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request), 'KpisController', 'KPIDashboard')
+#10 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}('2')
+#11 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Route.php(109): call_user_func_array(Object(Closure), Array)
+#12 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1033): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#13 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1001): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#14 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(775): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#15 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(745): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#16 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Session\Middleware.php(72): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#17 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Cookie\Queue.php(47): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#18 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Cookie\Guard.php(51): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#19 C:\laragon\www\pbs\vendor\stack\builder\src\Stack\StackedHttpKernel.php(23): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#20 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(641): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#21 C:\laragon\www\pbs\public\index.php(49): Illuminate\Foundation\Application->run()
+#22 {main} [] []
+[2017-07-10 05:10:58] production.INFO: insert into `HIV_Infections` (`user_id`, `unit_id`, `kpi_id`, `financial_id`, `quarter`, `age_group`, `no_male`, `no_female`, `no_male_hiv`, `no_female_hiv`, `remark`, `updated_at`, `created_at`) values ('219', '1', '2', '3', '1', '< 18', '34', '54', '23', '43', '
+                                                                 ', '2017-07-10 05:10:57', '2017-07-10 05:10:57') {"url":"http://localhost:8080/pbs/public/kpis/storeHIVInfection","user":"Jovi Jovi","ip":"::1"} []

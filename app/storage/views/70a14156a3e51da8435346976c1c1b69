@@ -1,0 +1,60 @@
+<?php $__env->startSection('title'); ?>
+Budget Summary
+@parent
+<?php $__env->stopSection(); ?>
+
+<?php /* Content */ ?>
+<?php $__env->startSection('content'); ?>
+	<?php echo $__env->make('reports/includes/reports-header-button', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+ <div class="col-md-12">
+ <i>Summary of Budget Estimates per Unit and Objective</i>
+   <fieldset><legend>  </legend>
+
+         <form  method="POST" action="">
+          <input type="hidden" name="_token" value="<?php echo e(Session::getToken()); ?>"/>
+
+             <div class="row">
+                 <div class="col-xs-4 col-sm-4 col-md-4">
+
+                         <div class="form-group <?php echo $errors->has('year') ? 'has-error' : ''; ?>">
+
+                           <select name="year" class="form-control">
+                           <option value=""> Select Financial Year</option>
+                            <?php foreach($years as $year ): ?>
+                            <option value="<?php echo $year->id; ?>"><?php echo $year->year; ?></option>
+                            <?php endforeach; ?>
+                           </select>
+                           <?php echo $errors->first('year', '<span class="help-block">:message</span>'); ?>
+
+                         </div>
+                      </div>
+
+                         <div class="col-xs-1 col-sm-1 col-md-1">
+                           <div class="form-group">
+                            <input type="submit" class="btn btn-primary" value="Search"/>
+                            </div>
+                         </div>
+						      <div class="col-xs-2 col-sm-2 col-md-2">
+							   <?php if(isset($budgets)): ?>
+								    <div class="btn-group">
+										<button type="button" class="btn btn-primary  dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+										   Download <span class="caret"></span>
+										</button>
+
+										<ul class="dropdown-menu" role="menu">
+											<li><a href="<?php echo URL::to('reports/unitsBudgetSummary'); ?>"><i class="fa fa-file-excel-o"></i> Excel</a></li>
+										   <!--<li><a href="#"><i class="fa fa-file-pdf-o"></i> PDF</a></li> -->
+
+										</ul>
+									</div><!--btn group-->
+								<?php endif; ?>
+                         </div>
+             </div>
+             </form>
+			  <?php echo $reports_view; ?>
+
+   
+  </fieldset>
+    </div>
+ <?php $__env->stopSection(); ?>
+<?php echo $__env->make('action.layouts.default', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

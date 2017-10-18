@@ -1,0 +1,30 @@
+                        
+						<?php $__env->startSection('scripts'); ?>
+					
+        
+        <script type="text/javascript">
+           if ($('#mylineChart').length ){
+
+			  var ctx = document.getElementById("mylineChart");
+			  var mylineChart = new Chart(ctx, {
+				type: 'line',
+				data: {
+				  labels: <?php echo json_encode($labels); ?>,
+				  datasets: <?php echo json_encode($linedataset); ?>
+
+				},
+				options: {
+				  scales: {
+					yAxes: [{
+					  ticks: {
+						beginAtZero: true
+					  }
+					}]
+				  }
+				}
+			  });
+
+			}
+        </script>
+  
+					<?php $__env->stopSection(); ?>

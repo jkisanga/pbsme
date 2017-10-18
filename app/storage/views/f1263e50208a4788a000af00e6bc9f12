@@ -1,0 +1,236 @@
+ <?php if( isset($objectives) && count($objectives) > 0): ?>
+
+                            <table class="table table-hover table-bordered"  border="1" cellspacing=2, cellpadding=5>
+                            <thead>
+                              <tr>
+                                    <td colspan="8" style="text-align:center"><h2><?php echo $zone->zone_name; ?> Zone- Budget For Financial Year <?php echo $financialYear->year; ?></h2></td>
+                                </tr>
+                            <tr>
+                                <th>Performance  Code</th>
+                                <th>Activity Description</th>
+                                <th>Input Code</th>
+                                <th>Input Description</th>
+                                <th>Unit of Measure</th>
+                                <th>Unit Cost (TZS)</th>
+                                <th>No. of Unit</th>
+                                <th>Total Cost (TZS)</th>
+                            </tr>
+
+                            </thead>
+                            <tbody>
+                            <?php foreach($objectives as $objective): ?>
+                             <tr>
+                            <td colspan="1"><b>OBJECTIVE <?php echo $objective->ob_code; ?></b></td>
+                            <td colspan="8"><b><?php echo $objective->ob_description; ?></b></td>
+                            </tr>
+
+                            <?php foreach(Target::getTargetByObjective($objective->id) as $target): ?>
+                             <tr>
+                            <td colspan="1" class="active"><b>TARGET <?php echo $target->target_no; ?></b></td>
+                            <td colspan="8"><b><?php echo $target->ta_description; ?></b></td>
+                          <?php foreach( ZonalActivity::getActivitiesByZone($zone->id,$target->id,$financialYear->id) as $activity): ?>
+
+                                <tr>
+                                  <td>
+
+                                    <?php echo $activity->number; ?>
+
+
+                                    </td>
+                               <td>
+
+                                   <?php echo $activity->description; ?>
+
+
+                                   </td>
+                                <td colspan="7">
+                                <table class="table table-bordered"  border="1" cellspacing=2, cellpadding=5>
+
+                                            <?php foreach( Item::getZonalItems($activity->id) as $input): ?>
+
+                                            <tbody> <tr>
+                                            <td class="success"><?php echo $input->item_code; ?></td>
+                                            <td class="warning"><?php echo $input->input_description; ?></td>
+                                            <td class="danger"><?php echo $input->unit_of_measure; ?></td>
+
+                                              <td class="active"><?php echo String::formatMoney($input->unit_cost); ?></td>
+                                               <td class="success"><?php echo String::formatMoney($input->quantity); ?></td>
+                                               <td class="warning"><?php echo String::formatMoney($input->total); ?></td>
+                                           </tr> </tbody>
+
+
+                                           <?php endforeach; ?>
+
+                               <tr>
+
+                                <th colspan="2">Total activity <?php echo $activity->number; ?></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th  class="success">
+                          
+                                <?php echo String::formatMoney(ZonalItem::zone_activity_total($zone->id,$activity->id)); ?>
+
+
+                                 </tr>
+                               </tr>
+                               </table>
+                                </td>
+
+                            </tr>
+                            </tr>
+
+                            <?php endforeach; ?>
+							<tr>
+							<td></td>
+							<td></td>
+								<td colspan="2"><b>Total Target <?php echo $target->target_no; ?></b></td>							
+							<td></td>
+							<td></td>
+							<td></td>
+							<td class="success"><b ><?php echo String::formatMoney(ZonalItem::zone_target_total($zone->id,$target->id,$financialYear->id)); ?></b></td>
+							
+							</tr>
+                             <?php endforeach; ?>
+							 
+							 		<tr>
+							<td></td>
+							<td></td>
+								<td colspan="2"><b>Total Objective <?php echo $objective->ob_code; ?></b></td>							
+							<td></td>
+							<td></td>
+							<td></td>
+							<td class="warning"><b ><?php echo String::formatMoney(ZonalItem::zone_objective_total($zone->id,$objective->id,$financialYear->id)); ?></b></td>
+							
+							</tr>
+                            <?php endforeach; ?>
+                            </tbody>
+									<tr>
+									<td></td>
+									<td></td>
+										<td colspan="2"><b>Grand Total</b></td>							
+									<td></td>
+									<td></td>
+									<td></td>
+									<td><b><?php echo String::formatMoney(ZonalItem::zone_grand_total($zone->id,$financialYear->id)); ?></b></td>
+								</tr>
+                            </table>
+
+
+
+
+                     <?php elseif(isset($selectedObjective)): ?>
+
+                            <table class="table table-hover table-bordered"  border="1" cellspacing=2, cellpadding=5>
+                            <thead>
+                               <tr>
+                                <td colspan="8" style="text-align:center"><h2><?php echo $zone->zone_name; ?> Zone- Budget For Financial Year <?php echo $financialYear->year; ?></h2></td>
+                            </tr>
+                            <tr>
+                                <th>Performance  Code</th>
+                                <th>Activity Description</th>
+                                <th>Input Code</th>
+                                <th>Input Description</th>
+                                <th>Unit of Measure</th>
+                                <th>Unit Cost (TZS)</th>
+                                <th>No. of Unit</th>
+                                <th>Total Cost (TZS)</th>
+                            </tr>
+
+                            </thead>
+                            <tbody>
+
+                             <tr>
+                            <td colspan="1"><b>OBJECTIVE <?php echo $selectedObjective->ob_code; ?></b></td>
+                            <td colspan="8"><b><?php echo $selectedObjective->ob_description; ?></b></td>
+                            </tr>
+
+                            <?php foreach(Target::getTargetByObjective($selectedObjective->id) as $target): ?>
+                             <tr>
+                            <td colspan="1" class="active"><b>TARGET <?php echo $target->target_no; ?></b></td>
+                            <td colspan="8"><b><?php echo $target->ta_description; ?></b></td>
+                             <?php foreach( ZonalActivity::getActivitiesByZone($zone->id,$target->id,$financialYear->id) as $activity): ?>
+
+                                <tr>
+                                  <td>
+
+                                    <?php echo $activity->number; ?>
+
+
+                                    </td>
+                               <td>
+
+                                   <?php echo $activity->description; ?>
+
+
+                                   </td>
+                                <td colspan="7">
+                                <table class="table table-bordered"  border="1" cellspacing=2, cellpadding=5>
+
+                                            <?php foreach( Item::getZonalItems($activity->id) as $input): ?>
+
+                                            <tbody> <tr>
+                                            <td class="success"><?php echo $input->item_code; ?></td>
+                                            <td class="warning"><?php echo $input->input_description; ?></td>
+                                            <td class="danger"><?php echo $input->unit_of_measure; ?></td>
+
+                                              <td class="active"><?php echo String::formatMoney($input->unit_cost); ?></td>
+                                               <td class="success"><?php echo String::formatMoney($input->quantity); ?></td>
+                                               <td class="warning"><?php echo String::formatMoney($input->total); ?></td>
+                                           </tr> </tbody>
+
+
+                                           <?php endforeach; ?>
+
+                               <tr>
+
+                                <tr>
+
+                                <th colspan="2">Total activity <?php echo $activity->number; ?></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th  class="success">
+                          
+                                <?php echo String::formatMoney(ZonalItem::zone_activity_total($zone->id,$activity->id)); ?>
+
+
+                                 </tr>
+                               </tr>
+                               </table>
+                                </td>
+
+                            </tr>
+                            </tr>
+                            <?php endforeach; ?>
+							
+								<tr>
+							<td></td>
+							<td></td>
+								<td colspan="2"><b>Total Target <?php echo $target->target_no; ?></b></td>							
+							<td></td>
+							<td></td>
+							<td></td>
+							<td class="success"><b ><?php echo String::formatMoney(ZonalItem::zone_target_total($zone->id,$target->id,$financialYear->id)); ?></b></td>
+							
+							</tr>
+                             <?php endforeach; ?>
+							 
+							 		<tr>
+							<td></td>
+							<td></td>
+								<td colspan="2"><b>Total Objective <?php echo $selectedObjective->ob_code; ?></b></td>							
+							<td></td>
+							<td></td>
+							<td></td>
+							<td class="warning"><b ><?php echo String::formatMoney(ZonalItem::zone_objective_total($zone->id,$selectedObjective->id,$financialYear->id)); ?></b></td>
+							
+							</tr>
+
+                            </tbody>
+
+                            </table>
+
+                            <?php else: ?>
+                            <div class=" form-control alert-warning ">No data for the selected year</div>
+                             <?php endif; ?>

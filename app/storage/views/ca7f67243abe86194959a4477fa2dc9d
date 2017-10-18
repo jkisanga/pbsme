@@ -1,0 +1,78 @@
+<?php $__env->startSection('title'); ?>
+Budget Consolidation
+@parent
+<?php $__env->stopSection(); ?>
+
+<?php /* Content */ ?>
+<?php $__env->startSection('content'); ?>
+
+ <div class="col-md-12">
+   <fieldset><legend> <b><?php echo $unit->zone->zone_name; ?> Budget Consolidation Panel <span class="pull-right">Financial Year <?php echo $financialYear->year; ?></span></b> </legend>
+
+              <div class="row">
+                 <div class="col-md-4">Total Number of Units <span class="badge badge-success"><?php echo count($zoneUnits); ?></span> </div>
+                 <div class="col-md-8">
+                    <?php foreach($zoneUnits as $unit): ?>
+                        <?php echo Str::upper($unit->name); ?> |
+                    <?php endforeach; ?>
+                 </div>
+              </div><hr>
+               <div class="row">
+                 <div class="col-md-4">Units Submitted Budget <span class="badge badge-success"><?php echo count($unitsSubmittedBudget); ?></span> </div>
+                 <div class="col-md-8">
+                    <?php foreach($unitsSubmittedBudget as $unit): ?>
+                        <?php echo Str::upper($unit->name); ?> |
+                    <?php endforeach; ?>
+                 </div>
+              </div><hr>
+
+               <div class="row">
+                 <div class="col-md-4">Units Not Submitted Budget <span class="badge badge-success"><?php echo count($zoneUnits) - count($unitsSubmittedBudget); ?></span> </div>
+
+              </div>
+                <hr>
+              <?php if(isset($objectives)): ?>
+                   <form  method="POST" action="<?php echo URL::to('budget/consolidate'); ?>">
+
+                    <input type="hidden" name="_token" value="<?php echo e(Session::getToken()); ?>"/>
+
+              <div class="row">
+
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                <label>Objective</label>
+                    <div class="form-group <?php echo e($errors->has('objective_id') ? 'has-error' : ''); ?>">
+
+                    <select name="objective_id" class="form-control select2" id="objective">
+                       <option  value="">Select Objective</option>
+                              <?php foreach($objectives as $objective): ?>
+                                 <option value="<?php echo $objective->id; ?>"><?php echo $objective->ob_code; ?>:<?php echo $objective->ob_description; ?></option>
+                               <?php endforeach; ?>
+                           </select>
+                         <?php echo $errors->first('objective_id', '<span class="help-block">:message</span>'); ?>
+
+                    </div>
+                 </div>
+                 </div>
+
+                    <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                                <label>Targets</label>
+                                    <div class="form-group <?php echo e($errors->has('target_id') ? 'has-error' : ''); ?>">
+                                        <ul class="list-group"  name="target_id" id="target">
+
+                                       </ul>
+                                         <?php echo $errors->first('target_id', '<span class="help-block">:message</span>'); ?>
+
+                                    </div>
+                                </div>
+                  </div>
+
+              <?php endif; ?>
+
+           </form>
+      </fieldset>
+
+ </div>
+
+ <?php $__env->stopSection(); ?>
+<?php echo $__env->make('action.layouts.default', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

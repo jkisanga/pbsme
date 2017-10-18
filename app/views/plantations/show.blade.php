@@ -1,0 +1,1 @@
+C:\laragon\www\pbs\app/views/plantations/show.blade.php

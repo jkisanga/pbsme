@@ -1,0 +1,22 @@
+[2017-05-06 09:22:37] production.ERROR: 500 - Trying to get property of non-object @ /user/change_password
+exception 'ErrorException' with message 'Trying to get property of non-object' in /home/tfs/public_html/pbs/app/controllers/user/UserController.php:328
+Stack trace:
+#0 /home/tfs/public_html/pbs/app/controllers/user/UserController.php(328): Illuminate\Exception\Handler->handleError(8, 'Trying to get p...', '/home/tfs/publi...', 328, Array)
+#1 [internal function]: UserController->getChangePassword()
+#2 /home/tfs/public_html/pbs/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(231): call_user_func_array(Array, Array)
+#3 /home/tfs/public_html/pbs/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(93): Illuminate\Routing\Controller->callAction('getChangePasswo...', Array)
+#4 /home/tfs/public_html/pbs/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(62): Illuminate\Routing\ControllerDispatcher->call(Object(UserController), Object(Illuminate\Routing\Route), 'getChangePasswo...')
+#5 /home/tfs/public_html/pbs/vendor/laravel/framework/src/Illuminate/Routing/Router.php(967): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request), 'UserController', 'getChangePasswo...')
+#6 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#7 /home/tfs/public_html/pbs/vendor/laravel/framework/src/Illuminate/Routing/Route.php(109): call_user_func_array(Object(Closure), Array)
+#8 /home/tfs/public_html/pbs/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1033): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#9 /home/tfs/public_html/pbs/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1001): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#10 /home/tfs/public_html/pbs/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(775): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#11 /home/tfs/public_html/pbs/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(745): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#12 /home/tfs/public_html/pbs/vendor/laravel/framework/src/Illuminate/Session/Middleware.php(72): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#13 /home/tfs/public_html/pbs/vendor/laravel/framework/src/Illuminate/Cookie/Queue.php(47): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#14 /home/tfs/public_html/pbs/vendor/laravel/framework/src/Illuminate/Cookie/Guard.php(51): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#15 /home/tfs/public_html/pbs/vendor/stack/builder/src/Stack/StackedHttpKernel.php(23): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#16 /home/tfs/public_html/pbs/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(641): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#17 /home/tfs/public_html/pbs/public/index.php(49): Illuminate\Foundation\Application->run()
+#18 {main} [] []

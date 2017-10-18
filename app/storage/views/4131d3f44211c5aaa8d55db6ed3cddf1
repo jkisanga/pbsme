@@ -1,0 +1,81 @@
+
+
+<?php $__env->startSection('content'); ?>
+ <!--BEGIN CONTENT-->
+
+                <div class="page-content">
+                    <div id="tab-general">
+                        <div id="sum_box" class="row mbl">
+								<?php echo $__env->make('reports/includes/reports-header-button', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+                             <div class="col-sm-12 col-md-12">
+							<i>NOTE: Select Financial Year only to get Full Budget OR Financial Year and Objective to get Budget per Objective</i>
+                             <fieldset><legend></legend>
+                                 <form  method="POST" action="<?php echo URL::to('reports/unitBudgetView'); ?>">
+                                  <input type="hidden" name="_token" value="<?php echo e(Session::getToken()); ?>"/>
+
+                                     <div class="row">
+                                         <div class="col-xs-3 col-sm-3 col-md-3">
+
+                                                 <div class="form-group <?php echo $errors->has('year') ? 'has-error' : ''; ?>">
+
+                                                   <select name="year" class="form-control">
+                                                   <option value=""> Select Financial Year</option>
+                                                    <?php foreach($years as $year ): ?>
+                                                    <option  value="<?php echo $year->id; ?>"><?php echo $year->year; ?></option>
+                                                    <?php endforeach; ?>
+                                                   </select>
+                                                    <?php echo $errors->first('year', '<span class="help-block">:message</span>'); ?>
+
+                                                 </div>
+                                              </div>
+											  	<?php if( Auth::user()->hasRole('manager') ): ?>
+											   <div class="col-xs-2 col-sm-2 col-md-2">
+
+                                                   <div class="form-group  <?php echo e($errors->has('unit') ? 'has-error' : ''); ?>">
+                                                     <select name="unit" class="form-control">
+                                                     <option value="<?php echo $unit->id; ?>"> <?php echo $unit->name; ?></option>
+                                                      <?php foreach($units as $unit ): ?>
+                                                      <option value="<?php echo $unit->id; ?>"><?php echo $unit->name; ?></option>
+                                                      <?php endforeach; ?>
+                                                     </select>
+                                                      <?php echo $errors->first('unit', '<span class="help-block">:message</span>'); ?>
+
+                                                   </div>
+                                                </div>
+												<?php endif; ?>
+                                         <div class="col-xs-3 col-sm-3 col-md-3">
+
+                                                 <div class="form-group">
+
+                                                   <select name="objective_id" class="form-control">
+                                                   <option value=""> Select Objective</option>
+                                                    <?php foreach(Objective::orderBy('ob_code')->get() as $objective ): ?>
+                                                    <option value="<?php echo $objective->id; ?>">OBJECTIVE : <?php echo $objective->ob_code; ?></option>
+                                                    <?php endforeach; ?>
+                                                   </select>
+
+                                                 </div>
+                                              </div>
+                                                 <div class="col-xs-4 col-sm-4 col-md-4">
+
+                                                    <?php echo $export_buttons; ?>
+
+
+                                                 </div>
+
+                                     </div>
+                                     </form>
+                                     </fieldset>
+
+                                    <?php echo $reports_view; ?>
+
+
+                             </div>
+                          </div>
+                       </div>
+                    </div>
+
+                    <?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('action.layouts.default', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -1,0 +1,186 @@
+
+
+<?php $__env->startSection('content'); ?>
+                <!--BEGIN CONTENT-->
+<div class="page-content">
+<div id="tab-general">
+<div class="row mbl">
+<div class="row">
+    <div class="col-lg-12">
+       <div class="x_panel">
+                         <div class="x_title">
+            <?php /*Item Code :  <b><?php echo $submission->item_code; ?></b> <br> */ ?>
+          <h2> <b style="color: sandybrown"><?php echo $submission->name; ?></b> Items</h2>
+            <a href="<?php echo URL::to('revenueCategory/index'); ?>" class="btn btn-sm btn-warning pull-right"><i class="fa fa-backward"></i></a>
+             <div class="clearfix"></div>
+              </div>
+                <div class="x_content">
+                <form action="<?php echo URL::to('revenueCategory/postRefSubmission/'. $submission->id); ?>" method="post">
+                <div class="form-body pal">
+                 <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>" />
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="form-group">
+                     <label for="inputName" class="control-label">
+                            <b>Item Code</b> </label>
+                        <div class="input-icon right">
+                        <input type="text" name="item_code" class="form-control" required="true" />
+                            </div>
+                    </div>
+                    <?php echo $errors->first('item_code', '<span class="help-inline" style="color:red">:message</span>'); ?>
+
+                </div>
+                <div class="col-md-10">
+                    <div class="form-group">
+                     <label for="inputName" class="control-label">
+                       <b>Description of Revenue</b> </label>
+                        <div class="input-icon right">
+                <input type="text" name="type_of_fee" class="form-control" required="true" />
+                            </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                     <label class="control-label">
+                      Royalty (%) </label>
+                        <div class="input-icon right">
+                <input type="text" name="royalty" class="form-control" required="true" />
+                            </div>
+                    </div>
+                </div>
+                <div class="col-md-1">
+                    <div class="form-group">
+                     <label class="control-label">
+                      TaFF (%) </label>
+                        <div class="input-icon right">
+                <input type="text" name="taff" class="form-control" required="true" />
+                            </div>
+                    </div>
+                </div>
+                <div class="col-md-1">
+                    <div class="form-group">
+                     <label class="control-label">
+                      VAT (%) </label>
+                        <div class="input-icon right">
+                <input type="text" name="vat" class="form-control" required="true" />
+                            </div>
+                    </div>
+                </div>
+
+                <div class="col-md-1">
+                    <div class="form-group">
+                     <label class="control-label">
+                     CESS (%) </label>
+                        <div class="input-icon right">
+                <input type="text" name="cess" class="form-control" required="true" />
+                            </div>
+                    </div>
+                </div>
+                <div class="col-md-1">
+                    <div class="form-group">
+                     <label class="control-label">
+                     TREE (%) </label>
+                        <div class="input-icon right">
+                <input type="text" name="tree" class="form-control" required="true"  />
+                            </div>
+                    </div>
+                </div>
+                 <div class="col-md-3">
+                                    <div class="form-group">
+                                     <label class="control-label">
+                                      LMDA <small>(in amount or percent)</small> </label>
+                                        <div class="input-icon right">
+                                <input type="text" name="lmda" class="form-control" required="true" placeholder=" amount or percent" />
+                                            </div>
+                                    </div>
+                                </div>
+                 <div class="col-md-2">
+                                    <div class="form-group">
+                                    <br>
+                                        <div class="input-icon right pull-right">
+                                        <button  type="submit"  class="btn btn-primary btn-sm"  ><i class="fa fa-save"></i> Save</button>
+                                            </div>
+                                    </div>
+                                </div>
+            <div class="col-md-12">
+ <i style="color: red">fill numerical percent / amount in box, put zero (0) if no percent / amount deducted. </i>
+
+
+            </div>
+           </div>
+                </div>
+
+
+                </form>
+                </div>
+
+<div class="">
+    <table class="table table-hover table-striped table-bordered dt">
+        <thead>
+        <tr>
+            <th class="">Item Code</th>
+            <th>Description of Revenue </th>
+            <th>Royalty</th>
+            <th>Taff</th>
+            <th>VAT</th>
+            <th>CESS</th>
+            <th>TREE</th>
+            <th>LMDA</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php foreach($refSubmissions as $item): ?>
+        <tr>
+            <td><?php echo $item->item_code; ?></td>
+            <td colspan=""><?php echo $item->type_of_fee; ?></td>
+            <td ><?php echo $item->royalty; ?> %</td>
+            <td colspan=""><?php echo $item->taff; ?> %</td>
+            <td colspan=""><?php echo $item->vat; ?> %</td>
+            <td colspan=""><?php echo $item->cess; ?> %</td>
+            <td colspan=""><?php echo $item->tree; ?> %</td>
+            <?php if($item->lmda > 100): ?>
+            <td colspan=""><?php echo $item->lmda; ?> TZS</td>
+            <?php else: ?>
+            <td colspan=""><?php echo $item->lmda; ?> %</td>
+            <?php endif; ?>
+            <td >
+              <a class="btn btn-sm btn-info" href="<?php echo URL::to('revenueCategory/classes/'.$item->id); ?>" >Classes</a>
+              <a class="btn btn-sm btn-default" href="<?php echo URL::to('revenueCategory/editRefSubmission/'.$item->id); ?>" ><i class="fa fa-pencil"></i> </a>
+                 <?php /*<li><a href="<?php echo e(URL::to('revenueCategory/deleteRefSubmission/'.$item->id)); ?>" onclick="return confirm('Are you sure?')" >Delete</a></li>*/ ?>
+
+            </td>
+            </tr>
+            <?php if(count(RefSubmissionClass::where('ref_submission_id', '=',$item->id)->get()) > 0): ?>
+            <tr>
+            <th></th>
+            <th>Classes</th>
+            <th>Rate</th>
+
+            </tr><?php endif; ?>
+            <tr>
+            <?php foreach(RefSubmissionClass::where('ref_submission_id', '=',$item->id)->get() as $itm2): ?>
+
+            <td ></td>
+            <td ><?php echo $itm2->class; ?></td>
+            <td ><?php echo $itm2->rate; ?></td>
+
+
+
+            </tr><?php endforeach; ?>
+
+            <?php endforeach; ?>
+            </tbody>
+            </table>
+
+</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                <!--END CONTENT-->
+               <?php $__env->stopSection(); ?>
+<?php echo $__env->make('action.layouts.default', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -1,0 +1,53 @@
+  <form action="<?php echo URL::to('budget/zone_submit'); ?>" method="post">
+	 <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>" />
+       <input  type="hidden"  name="year_id" class="form-control" value="<?php echo $financial_year->id; ?>" /> 
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h5><?php echo $unit->zone; ?> (<?php echo $unit->initial; ?>) </h5>
+			</div>
+
+			<div class="panel-body">
+
+			 <div class="row">
+						 <div class="col-md-4">Total Number of Units <span class="badge badge-success"><?php echo count($zoneUnits); ?></span> </div>
+						 <div class="col-md-8">
+							Units Submitted Report
+						 </div>
+					  </div><hr>
+					   <div class="row">
+						 <div class="col-md-4">  </div>
+						 <div class="col-md-8">
+							<table class="table table-bordered">
+							<thead>
+								<tr>
+									<th>Unit</th>
+									<th>Quarter</th>
+									<th>submited By</th>
+								</tr>
+							</thead>
+							</tbody>
+							<?php foreach($zoneUnits as $unit): ?>
+								<tr>
+									<td><?php echo Str::upper($unit->name); ?></td>
+									<td colspan="2">
+									<table class="table" width="100%">
+										<?php foreach($unitsSubmitted as $report): ?>
+										   <?php if($report->name == $unit->name): ?>
+											<tr>
+												<td><?php echo Str::upper($report->quarter); ?></td>
+												<td><?php echo Str::upper($report->first_name); ?>  <?php echo Str::upper($report->last_name); ?>  <a href="<?php echo URL::to('kpiEvaluation/unlock',$report->kid); ?>" onclick="return confirm('Are you sure?')" class="btn btn-sm btn-primary pull-right">Unlock</a></td>
+											</tr>
+											<?php endif; ?>
+										<?php endforeach; ?>
+										</table>
+									</td>
+								</tr>
+							<?php endforeach; ?>
+							</tbody>
+							</table>
+						 </div>
+					  </div><hr>
+
+			</div>
+		</div>
+</form>

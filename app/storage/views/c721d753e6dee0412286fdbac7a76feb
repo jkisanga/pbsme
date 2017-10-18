@@ -1,0 +1,143 @@
+<?php $__env->startSection('content'); ?>
+<div class="col-lg-12">
+<div class="x_panel">
+     <div class="x_title">
+        Objective :   &nbsp; <b><?php echo $objective->ob_code; ?> - &nbsp; <?php echo $objective->ob_description; ?></b><br>
+           <h2>&nbsp;&nbsp;&nbsp;&nbsp;KPI : <b>&nbsp; <?php echo $kpi->name; ?></b> &nbsp; ( <?php echo $f_year->year; ?> )</h2>
+        <a href="<?php echo URL::to('kpis/objectives'); ?>" class="btn btn-sm btn-warning pull-right"><i class="fa fa-backward"></i></a>
+        <div class="clearfix"></div>
+            </div>
+                            <div class="x_content" >
+
+                                                <form class="form-horizontal form-label-left" action="<?php echo URL::to('kpis/storeHIVInfection'); ?>" method="post">
+                                                <div class="form-body pal" >
+                                                    <div class="row">
+                                                       <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>" />
+
+                                                       <input type="hidden" name="user_id" value="<?php echo e($user->id); ?>" />
+                                                       <input type="hidden" name="unit_id" value="<?php echo e($unit->id); ?>" />
+                                                       <input type="hidden" name="kpi_id" value="<?php echo e($kpi->id); ?>" />
+                                                       <input type="hidden" name="financial_id" value="<?php echo e($f_year->id); ?>" />
+
+                                                        <div class="col-md-6">
+                                                         <div class="form-group">
+                                                           <label class="control-label col-md-6 col-sm-3">Quarter :</label>
+                                                           <div class="col-md-6 col-sm-4 col-xs-12">
+                                                             <select class="form-control" name="quarter" required="true">
+                                                                <option></option>
+                                                                <option value="1"> First</option>
+                                                                <option value="2"> Second</option>
+                                                                <option value="3"> Third</option>
+                                                                <option value="4"> Forth</option>
+                                                             </select>
+                                                           </div>
+                                                         </div>
+
+
+                                                            <div class="form-group">
+                                                               <label class="control-label col-md-6 col-sm-3">Age Group : </label>
+                                                               <div class="col-md-6 col-sm-4 col-xs-12">
+                                                                 <select class="form-control" required="true" name="age_group">
+                                                                 <option></option>
+                                                                 <option value="< 18"> < 18</option>
+                                                                 <option value="19-35">19 - 35</option>
+                                                                 <option value="36-45">36 - 45</option>
+                                                                 <option value="46-60">46 - 60</option>
+                                                               </select>
+                                                               </div>
+                                                             </div>
+
+                                                             <div class="form-group">
+                                                               <label class="control-label col-md-6 col-sm-3">No of Male Staff :</label>
+                                                               <div class="col-md-6 col-sm-4 col-xs-12">
+                                                                 <input type="text" class="form-control" required="true" name="no_male"  />
+                                                               </div>
+                                                             </div>
+
+                                                             <div class="form-group">
+                                                               <label class="control-label col-md-6 col-sm-3">No of Female Staff :</label>
+                                                               <div class="col-md-6 col-sm-4 col-xs-12">
+                                                                 <input type="text" class="form-control" required="true" name="no_female" />
+                                                               </div>
+                                                             </div>
+
+
+                                                            </div>
+
+
+                                                            <div class="col-md-6">
+ <div class="form-group">
+                                                               <label class="control-label col-md-6 col-sm-3">No of Male with HIV :</label>
+                                                               <div class="col-md-6 col-sm-4 col-xs-12">
+                                                                 <input type="text" class="form-control" required="true" name="no_male_hiv" />
+                                                               </div>
+                                                             </div>
+
+                                                             <div class="form-group">
+                                                               <label class="control-label col-md-6 col-sm-3">No of Female with HIV :</label>
+                                                               <div class="col-md-6 col-sm-4 col-xs-12">
+                                                                 <input type="text" class="form-control" required="true" name="no_female_hiv" />
+                                                               </div>
+                                                             </div>
+
+
+                                                             <div class="form-group">
+                                                               <label class="control-label col-md-6 col-sm-3">Remark if any :</label>
+                                                               <div class="col-md-6 col-sm-4 col-xs-12">
+                                                                 <textarea class="form-control" name="remark">
+
+                                                                 </textarea>
+                                                               </div>
+                                                             </div>
+                                                            </div>
+
+
+
+                                                    </div>
+                                                    <div class="row">
+                                                     <div class="col-md-12">
+                                                    <div class="form-group pull-right">
+                                                            <button  type="submit"  class="btn btn-primary btn-sm"  ><i class="fa fa-save"></i> Save</button>
+                                                            </div>
+                                                </div>
+                                                    </div>
+                                                    <hr />
+                                                </div>
+                                                </form>
+                                            </div>
+
+                     <table class="table table-hover table-bordered dt jambo_table bulk_action " >
+                       <thead>
+                       <tr>
+                    <th>Quarter</th>
+                    <th >Age Group</th>
+                    <th>No Male</th>
+                    <th>No Female</th>
+                    <th>No Male with HIV</th>
+                    <th>No Female with HIV</th>
+                    <th>Remarks</th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php foreach($hivInfection as $item): ?>
+                <tr>
+                <td><?php echo $item->quarter; ?></td>
+                <td><?php echo $item->age_group; ?></td>
+                <td><?php echo $item->no_male; ?></td>
+                <td><?php echo $item->no_female; ?></td>
+                <td><?php echo $item->no_male_hiv; ?></td>
+                <td><?php echo $item->no_female_hiv; ?></td>
+                <td><?php echo $item->remark; ?></td>
+
+                </tr>
+                <?php endforeach; ?>
+                </tbody>
+                </table>
+  </div>
+</div>
+
+                <!--END CONTENT-->
+                </section>
+
+               <?php $__env->stopSection(); ?>
+<?php echo $__env->make('action.layouts.default', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

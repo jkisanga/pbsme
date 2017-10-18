@@ -1,0 +1,52 @@
+<?php $__env->startSection('content'); ?>
+<section class="content-header">
+        </section>
+<!-- Main content -->
+        <section class="content">
+
+            <div class="panel panel-default">
+				<div class="panel-heading">
+				<h5><?php echo $financial_year->year; ?> Financial Year </h5>
+				</div>
+                <div class="panel-body">
+                    <form action="" method="post">
+                    <div class="form-body">
+                        <div class="row">
+                           <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>" />
+                            <input  type="hidden"  name="year_id" class="form-control" value="<?php echo $financial_year->id; ?>" />                         
+								 </div>
+							<div class="row">
+							   <?php if(!empty($unit)): ?>
+									<div class="col-md-2">
+											<label>Substation/Unit</label>
+									</div>
+									 <div class="col-md-5">
+										
+										  <input  type="text"  class="form-control" value="<?php echo $unit->name; ?>" readonly />
+									 </div>
+                                  <div class="col-md-4">
+										<?php if($unit_submited ): ?>
+                                        <div class="alert alert-success">Submitted</div>
+										<?php else: ?>
+											 <div class="form-group">
+											<input  type="submit"  class="btn btn-primary" value="Submit" />
+											</div>
+										<?php endif; ?>
+                                    </div>
+								 <?php endif; ?>
+                            </div>
+
+
+                        </div>
+                        <hr />
+                          </form>
+                    </div>
+                </div>
+				    <?php if(Auth::user()->hasRole('manager') || Auth::user()->hasRole('supermanager')): ?>
+						<?php echo $zone_budget_submit_view; ?>
+
+					<?php endif; ?>
+                </section>
+
+               <?php $__env->stopSection(); ?>
+<?php echo $__env->make('action.layouts.default', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

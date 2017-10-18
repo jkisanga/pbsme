@@ -1,0 +1,24 @@
+<div class="col-sm-12 col-md-12">
+
+<ul class="breadcrumb">
+		<?php if( Auth::user()->hasRole('manager') || Auth::user()->hasRole('supermanager') ): ?>
+			 <li <?php echo (Request::is('reports/unitBudgetView') ? ' class="active"' : ''); ?>><a href="<?php echo URL::to('reports/unitBudgetView'); ?>"> Unit Budgets</a></li>
+		   <li <?php echo (Request::is('reports/unitBudgetSummary') ? ' class="active"' : ''); ?>><a href="<?php echo e(URL::to('reports/unitBudgetSummary')); ?>">Units Budget Summary </a></li>
+                <li <?php echo (Request::is('reports/zonesBudgetView') ? ' class="active"' : ''); ?>><a href="<?php echo e(URL::to('reports/zonesBudgetView')); ?>">Zonal Budget</a></li>
+                <li <?php echo (Request::is('reports/zonesDistribution') ? ' class="active"' : ''); ?>><a href="<?php echo e(URL::to('reports/zonesDistribution')); ?>">Zonal Budget Distribution</a></li>
+			<li <?php echo (Request::is('reports/unitBudgetView') ? ' class="active"' : ''); ?>><a href="<?php echo URL::to('reports/unitBudgetView'); ?>"> <?php echo Auth::user()->unit->name; ?> Budget</a></li>
+		  <li <?php echo (Request::is('reports/unitForm3cView') ? ' class="active"' : ''); ?>><a href="<?php echo URL::to('reports/unitForm3cView'); ?>"><?php echo Auth::user()->unit->name; ?> Form3c</a></li>
+		  <li <?php echo (Request::is('reports/zoneForm3cView') ? ' class="active"' : ''); ?>><a href="<?php echo URL::to('reports/zoneForm3cView'); ?>">Zonal Form3c</a></li>
+			<?php else: ?>
+			<li <?php echo (Request::is('reports/unitBudgetView') ? ' class="active"' : ''); ?>><a href="<?php echo URL::to('reports/unitBudgetView'); ?>"> <?php echo Auth::user()->unit->name; ?> Budget</a></li>
+		  <li <?php echo (Request::is('reports/unitForm3cView') ? ' class="active"' : ''); ?>><a href="<?php echo URL::to('reports/unitForm3cView'); ?>">Unit Form3c</a></li>
+			<?php endif; ?>
+
+           	<?php if( Auth::user()->hasRole('supermanager') ): ?>
+           	<li <?php echo (Request::is('reports/zonesBudgetView') ? ' class="active"' : ''); ?>><a href="<?php echo e(URL::to('reports/zonesBudgetView')); ?>">Zonal Budget</a>
+                <li <?php echo (Request::is('reports/overallBudget') ? ' class="active"' : ''); ?>><a href="<?php echo e(URL::to('reports/overallBudget')); ?>">Overall Budget</a></li>
+                <li <?php echo (Request::is('reports/zonesBudgetSummary') ? ' class="active"' : ''); ?>><a href="<?php echo e(URL::to('reports/zonesBudgetSummary')); ?>">Zone Budget Summary</a></li>
+		<li <?php echo (Request::is('reports/hqForm3cView') ? ' class="active"' : ''); ?>><a href="<?php echo URL::to('reports/hqForm3cView'); ?>">HQ Form3c</a></li>
+			<?php endif; ?>
+		</ul>
+</div>

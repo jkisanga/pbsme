@@ -1,0 +1,383 @@
+[2017-09-25 04:25:47] production.ERROR: 500 - View [kpi_evaluation.overallReport] not found. @ /kpiEvaluation/report/2
+exception 'InvalidArgumentException' with message 'View [kpi_evaluation.overallReport] not found.' in C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\View\FileViewFinder.php:146
+Stack trace:
+#0 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\View\FileViewFinder.php(83): Illuminate\View\FileViewFinder->findInPaths('kpi_evaluation....', Array)
+#1 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\View\Factory.php(124): Illuminate\View\FileViewFinder->find('kpi_evaluation....')
+#2 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Support\Facades\Facade.php(211): Illuminate\View\Factory->make('kpi_evaluation....', Array)
+#3 C:\laragon\www\pbs\app\controllers\KpiEvaluationsController.php(407): Illuminate\Support\Facades\Facade::__callStatic('make', Array)
+#4 C:\laragon\www\pbs\app\controllers\KpiEvaluationsController.php(407): Illuminate\Support\Facades\View::make('kpi_evaluation....', Array)
+#5 [internal function]: KpiEvaluationsController->getOverallReport('2')
+#6 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Controller.php(231): call_user_func_array(Array, Array)
+#7 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php(93): Illuminate\Routing\Controller->callAction('getOverallRepor...', Array)
+#8 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php(62): Illuminate\Routing\ControllerDispatcher->call(Object(KpiEvaluationsController), Object(Illuminate\Routing\Route), 'getOverallRepor...')
+#9 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(967): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request), 'KpiEvaluationsC...', 'getOverallRepor...')
+#10 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}('2')
+#11 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Route.php(109): call_user_func_array(Object(Closure), Array)
+#12 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1033): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#13 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1001): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#14 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(775): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#15 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(745): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#16 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Session\Middleware.php(72): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#17 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Cookie\Queue.php(47): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#18 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Cookie\Guard.php(51): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#19 C:\laragon\www\pbs\vendor\stack\builder\src\Stack\StackedHttpKernel.php(23): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#20 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(641): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#21 C:\laragon\www\pbs\public\index.php(49): Illuminate\Foundation\Application->run()
+#22 {main} [] []
+[2017-09-25 06:00:09] production.INFO: insert into `ref_kpi_fields` (`name`, `label`, `data_type`, `validation_rule`, `updated_at`, `created_at`) values ('has_manager', 'Has Manager', 'boolean', '', '2017-09-25 06:00:09', '2017-09-25 06:00:09') {"url":"http://localhost:8000/pbs/public/refKpiFields/store","user":"Jovi Jovi","ip":"::1"} []
+[2017-09-25 06:00:29] production.INFO: insert into `kpi_fields` (`kpi_id`, `field_id`, `updated_at`, `created_at`) values ('4', '20', '2017-09-25 06:00:29', '2017-09-25 06:00:29') {"url":"http://localhost:8000/pbs/public/kpis/fields/4","user":"Jovi Jovi","ip":"::1"} []
+[2017-09-25 06:02:13] production.INFO: insert into `kpi_evaluations` (`kpi_id`, `has_manager`, `year_id`, `unit_id`, `zone_id`, `user_id`, `updated_at`, `created_at`) values ('4', '1', 3, 2, 1, 219, '2017-09-25 06:02:13', '2017-09-25 06:02:13') {"url":"http://localhost:8000/pbs/public/kpiEvaluation/store","user":"Jovi Jovi","ip":"::1"} []
+[2017-09-25 06:03:13] production.INFO: delete from `kpi_fields` where `field_id` = 20 {"url":"http://localhost:8000/pbs/public/refKpiFields/delete/20","user":"Jovi Jovi","ip":"::1"} []
+[2017-09-25 06:03:13] production.INFO: delete from `ref_kpi_fields` where `id` = 20 {"url":"http://localhost:8000/pbs/public/refKpiFields/delete/20","user":"Jovi Jovi","ip":"::1"} []
+[2017-09-25 06:03:33] production.INFO: insert into `ref_kpi_fields` (`name`, `label`, `data_type`, `validation_rule`, `options`, `updated_at`, `created_at`) values ('has_manager', 'Has Manager', 'enum', '', 'Yes,No', '2017-09-25 06:03:33', '2017-09-25 06:03:33') {"url":"http://localhost:8000/pbs/public/refKpiFields/store","user":"Jovi Jovi","ip":"::1"} []
+[2017-09-25 06:03:50] production.INFO: insert into `kpi_fields` (`kpi_id`, `field_id`, `updated_at`, `created_at`) values ('4', '13', '2017-09-25 06:03:50', '2017-09-25 06:03:50') {"url":"http://localhost:8000/pbs/public/kpis/fields/4","user":"Jovi Jovi","ip":"::1"} []
+[2017-09-25 06:03:50] production.INFO: insert into `kpi_fields` (`kpi_id`, `field_id`, `updated_at`, `created_at`) values ('4', '21', '2017-09-25 06:03:50', '2017-09-25 06:03:50') {"url":"http://localhost:8000/pbs/public/kpis/fields/4","user":"Jovi Jovi","ip":"::1"} []
+[2017-09-25 06:04:06] production.INFO: insert into `kpi_evaluations` (`kpi_id`, `no_staff_female`, `has_manager`, `year_id`, `unit_id`, `zone_id`, `user_id`, `updated_at`, `created_at`) values ('4', '77', 'No', 3, 2, 1, 219, '2017-09-25 06:04:06', '2017-09-25 06:04:06') {"url":"http://localhost:8000/pbs/public/kpiEvaluation/store","user":"Jovi Jovi","ip":"::1"} []
+[2017-09-25 06:04:15] production.INFO: insert into `kpi_evaluations` (`kpi_id`, `no_staff_female`, `has_manager`, `year_id`, `unit_id`, `zone_id`, `user_id`, `updated_at`, `created_at`) values ('4', '87', 'Yes', 3, 2, 1, 219, '2017-09-25 06:04:15', '2017-09-25 06:04:15') {"url":"http://localhost:8000/pbs/public/kpiEvaluation/store","user":"Jovi Jovi","ip":"::1"} []
+[2017-09-25 06:40:23] production.ERROR: 500 - SQLSTATE[42S22]: Column not found: 1054 Unknown column 'no_male' in 'field list' (SQL: select sum(`no_male`) as aggregate from `kpi_evaluations` where `kpi_id` = 2 and `unit_id` = 2 and `year_id` = 3 and `quarter` = First) @ /kpiEvaluation/unitReport/2
+exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'no_male' in 'field list'' in C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Database\Connection.php:299
+Stack trace:
+#0 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Database\Connection.php(299): PDO->prepare('select sum(`no_...')
+#1 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Database\Connection.php(617): Illuminate\Database\Connection->Illuminate\Database\{closure}(Object(Illuminate\Database\MySqlConnection), 'select sum(`no_...', Array)
+#2 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Database\Connection.php(581): Illuminate\Database\Connection->runQueryCallback('select sum(`no_...', Array, Object(Closure))
+#3 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Database\Connection.php(304): Illuminate\Database\Connection->run('select sum(`no_...', Array, Object(Closure))
+#4 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php(1412): Illuminate\Database\Connection->select('select sum(`no_...', Array)
+#5 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php(1397): Illuminate\Database\Query\Builder->runSelect()
+#6 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php(1384): Illuminate\Database\Query\Builder->getFresh(Array)
+#7 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php(1830): Illuminate\Database\Query\Builder->get(Array)
+#8 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php(1801): Illuminate\Database\Query\Builder->aggregate('sum', Array)
+#9 [internal function]: Illuminate\Database\Query\Builder->sum('no_male')
+#10 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php(972): call_user_func_array(Array, Array)
+#11 C:\laragon\www\pbs\app\controllers\KpiEvaluationsController.php(206): Illuminate\Database\Eloquent\Builder->__call('sum', Array)
+#12 C:\laragon\www\pbs\app\controllers\KpiEvaluationsController.php(206): Illuminate\Database\Eloquent\Builder->sum('no_male')
+#13 [internal function]: KpiEvaluationsController->postUnitReport('2')
+#14 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Controller.php(231): call_user_func_array(Array, Array)
+#15 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php(93): Illuminate\Routing\Controller->callAction('postUnitReport', Array)
+#16 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php(62): Illuminate\Routing\ControllerDispatcher->call(Object(KpiEvaluationsController), Object(Illuminate\Routing\Route), 'postUnitReport')
+#17 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(967): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request), 'KpiEvaluationsC...', 'postUnitReport')
+#18 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}('2')
+#19 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Route.php(109): call_user_func_array(Object(Closure), Array)
+#20 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1033): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#21 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1001): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#22 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(775): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#23 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(745): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#24 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Session\Middleware.php(72): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#25 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Cookie\Queue.php(47): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#26 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Cookie\Guard.php(51): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#27 C:\laragon\www\pbs\vendor\stack\builder\src\Stack\StackedHttpKernel.php(23): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#28 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(641): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#29 C:\laragon\www\pbs\public\index.php(49): Illuminate\Foundation\Application->run()
+#30 {main}
+
+Next exception 'Illuminate\Database\QueryException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'no_male' in 'field list' (SQL: select sum(`no_male`) as aggregate from `kpi_evaluations` where `kpi_id` = 2 and `unit_id` = 2 and `year_id` = 3 and `quarter` = First)' in C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Database\Connection.php:625
+Stack trace:
+#0 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Database\Connection.php(581): Illuminate\Database\Connection->runQueryCallback('select sum(`no_...', Array, Object(Closure))
+#1 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Database\Connection.php(304): Illuminate\Database\Connection->run('select sum(`no_...', Array, Object(Closure))
+#2 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php(1412): Illuminate\Database\Connection->select('select sum(`no_...', Array)
+#3 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php(1397): Illuminate\Database\Query\Builder->runSelect()
+#4 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php(1384): Illuminate\Database\Query\Builder->getFresh(Array)
+#5 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php(1830): Illuminate\Database\Query\Builder->get(Array)
+#6 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php(1801): Illuminate\Database\Query\Builder->aggregate('sum', Array)
+#7 [internal function]: Illuminate\Database\Query\Builder->sum('no_male')
+#8 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php(972): call_user_func_array(Array, Array)
+#9 C:\laragon\www\pbs\app\controllers\KpiEvaluationsController.php(206): Illuminate\Database\Eloquent\Builder->__call('sum', Array)
+#10 C:\laragon\www\pbs\app\controllers\KpiEvaluationsController.php(206): Illuminate\Database\Eloquent\Builder->sum('no_male')
+#11 [internal function]: KpiEvaluationsController->postUnitReport('2')
+#12 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Controller.php(231): call_user_func_array(Array, Array)
+#13 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php(93): Illuminate\Routing\Controller->callAction('postUnitReport', Array)
+#14 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php(62): Illuminate\Routing\ControllerDispatcher->call(Object(KpiEvaluationsController), Object(Illuminate\Routing\Route), 'postUnitReport')
+#15 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(967): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request), 'KpiEvaluationsC...', 'postUnitReport')
+#16 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}('2')
+#17 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Route.php(109): call_user_func_array(Object(Closure), Array)
+#18 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1033): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#19 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1001): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#20 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(775): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#21 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(745): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#22 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Session\Middleware.php(72): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#23 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Cookie\Queue.php(47): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#24 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Cookie\Guard.php(51): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#25 C:\laragon\www\pbs\vendor\stack\builder\src\Stack\StackedHttpKernel.php(23): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#26 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(641): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#27 C:\laragon\www\pbs\public\index.php(49): Illuminate\Foundation\Application->run()
+#28 {main} [] []
+[2017-09-25 06:40:45] production.ERROR: 500 - Call to a member function where() on string @ /kpiEvaluation/unitReport/2
+exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function where() on string' in C:\laragon\www\pbs\app\controllers\KpiEvaluationsController.php:208
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2017-09-25 07:27:51] production.ERROR: 500 - Cannot use object of type stdClass as array @ /kpiEvaluation/create/2
+exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Cannot use object of type stdClass as array' in C:\laragon\www\pbs\app\controllers\KpiEvaluationsController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2017-09-25 07:30:08] production.ERROR: 500 - Cannot use object of type stdClass as array @ /kpiEvaluation/create/2
+exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Cannot use object of type stdClass as array' in C:\laragon\www\pbs\app\controllers\KpiEvaluationsController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2017-09-25 07:37:22] production.ERROR: 500 - Cannot use object of type stdClass as array @ /kpiEvaluation/unitReport/2
+exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Cannot use object of type stdClass as array' in C:\laragon\www\pbs\app\controllers\KpiEvaluationsController.php:231
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2017-09-25 07:39:11] production.ERROR: 500 - Cannot use object of type stdClass as array @ /kpiEvaluation/unitReport/2
+exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Cannot use object of type stdClass as array' in C:\laragon\www\pbs\app\controllers\KpiEvaluationsController.php:233
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2017-09-25 07:43:37] production.ERROR: 500 - Call to undefined function jason_encode() @ /kpiEvaluation/unitReport/2
+exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined function jason_encode()' in C:\laragon\www\pbs\app\controllers\KpiEvaluationsController.php:214
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2017-09-25 07:47:25] production.ERROR: 500 - Cannot use object of type stdClass as array @ /kpiEvaluation/create/2
+exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Cannot use object of type stdClass as array' in C:\laragon\www\pbs\app\controllers\KpiEvaluationsController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2017-09-25 07:48:36] production.ERROR: 500 - Cannot use object of type stdClass as array @ /kpiEvaluation/unitReport/2
+exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Cannot use object of type stdClass as array' in C:\laragon\www\pbs\app\controllers\KpiEvaluationsController.php:232
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2017-09-25 07:54:46] production.ERROR: 500 - Cannot use object of type stdClass as array @ /kpiEvaluation/unitReport/2
+exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Cannot use object of type stdClass as array' in C:\laragon\www\pbs\app\controllers\KpiEvaluationsController.php:232
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2017-09-25 07:54:53] production.ERROR: 500 - Cannot use object of type stdClass as array @ /kpiEvaluation/unitReport/2
+exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Cannot use object of type stdClass as array' in C:\laragon\www\pbs\app\controllers\KpiEvaluationsController.php:232
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2017-09-25 07:58:01] production.ERROR: 500 - Call to a member function get() on array @ /kpiEvaluation/unitReport/2
+exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function get() on array' in C:\laragon\www\pbs\app\controllers\KpiEvaluationsController.php:212
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2017-09-25 07:58:12] production.ERROR: 500 - Cannot use object of type stdClass as array @ /kpiEvaluation/unitReport/2
+exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Cannot use object of type stdClass as array' in C:\laragon\www\pbs\app\controllers\KpiEvaluationsController.php:232
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2017-09-25 07:59:50] production.ERROR: 500 - The Response content must be a string or object implementing __toString(), "boolean" given. @ /kpiEvaluation/unitReport/2
+exception 'UnexpectedValueException' with message 'The Response content must be a string or object implementing __toString(), "boolean" given.' in C:\laragon\www\pbs\vendor\symfony\http-foundation\Symfony\Component\HttpFoundation\Response.php:403
+Stack trace:
+#0 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Http\Response.php(46): Symfony\Component\HttpFoundation\Response->setContent(true)
+#1 C:\laragon\www\pbs\vendor\symfony\http-foundation\Symfony\Component\HttpFoundation\Response.php(202): Illuminate\Http\Response->setContent(true)
+#2 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1501): Symfony\Component\HttpFoundation\Response->__construct(true)
+#3 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1036): Illuminate\Routing\Router->prepareResponse(Object(Illuminate\Http\Request), true)
+#4 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1001): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#5 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(775): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#6 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(745): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#7 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Session\Middleware.php(72): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#8 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Cookie\Queue.php(47): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#9 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Cookie\Guard.php(51): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#10 C:\laragon\www\pbs\vendor\stack\builder\src\Stack\StackedHttpKernel.php(23): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#11 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(641): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#12 C:\laragon\www\pbs\public\index.php(49): Illuminate\Foundation\Application->run()
+#13 {main} [] []
+[2017-09-25 08:00:41] production.ERROR: 500 - Cannot use object of type stdClass as array @ /kpiEvaluation/unitReport/2
+exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Cannot use object of type stdClass as array' in C:\laragon\www\pbs\app\controllers\KpiEvaluationsController.php:234
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2017-09-25 08:02:55] production.ERROR: 500 - Cannot use object of type stdClass as array @ /kpiEvaluation/unitReport/2
+exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Cannot use object of type stdClass as array' in C:\laragon\www\pbs\app\controllers\KpiEvaluationsController.php:234
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2017-09-25 08:07:16] production.ERROR: 500 - Call to undefined method Illuminate\Database\Query\Builder::toArray() @ /kpiEvaluation/unitReport/2
+exception 'BadMethodCallException' with message 'Call to undefined method Illuminate\Database\Query\Builder::toArray()' in C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:2184
+Stack trace:
+#0 C:\laragon\www\pbs\app\controllers\KpiEvaluationsController.php(212): Illuminate\Database\Query\Builder->__call('toArray', Array)
+#1 C:\laragon\www\pbs\app\controllers\KpiEvaluationsController.php(212): Illuminate\Database\Query\Builder->toArray()
+#2 [internal function]: KpiEvaluationsController->postUnitReport('2')
+#3 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Controller.php(231): call_user_func_array(Array, Array)
+#4 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php(93): Illuminate\Routing\Controller->callAction('postUnitReport', Array)
+#5 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php(62): Illuminate\Routing\ControllerDispatcher->call(Object(KpiEvaluationsController), Object(Illuminate\Routing\Route), 'postUnitReport')
+#6 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(967): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request), 'KpiEvaluationsC...', 'postUnitReport')
+#7 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}('2')
+#8 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Route.php(109): call_user_func_array(Object(Closure), Array)
+#9 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1033): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#10 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1001): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#11 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(775): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#12 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(745): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#13 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Session\Middleware.php(72): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#14 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Cookie\Queue.php(47): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#15 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Cookie\Guard.php(51): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#16 C:\laragon\www\pbs\vendor\stack\builder\src\Stack\StackedHttpKernel.php(23): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#17 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(641): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#18 C:\laragon\www\pbs\public\index.php(49): Illuminate\Foundation\Application->run()
+#19 {main} [] []
+[2017-09-25 08:07:54] production.ERROR: 500 - Call to a member function toArray() on array @ /kpiEvaluation/unitReport/2
+exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function toArray() on array' in C:\laragon\www\pbs\app\controllers\KpiEvaluationsController.php:212
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2017-09-25 08:07:56] production.ERROR: 500 - Call to a member function toArray() on array @ /kpiEvaluation/unitReport/2
+exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function toArray() on array' in C:\laragon\www\pbs\app\controllers\KpiEvaluationsController.php:212
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2017-09-25 08:15:59] production.ERROR: 500 - Call to undefined function collect() @ /kpiEvaluation/unitReport/2
+exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined function collect()' in C:\laragon\www\pbs\app\controllers\KpiEvaluationsController.php:212
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2017-09-25 08:19:35] production.ERROR: 500 - Call to undefined method Illuminate\Database\Query\Builder::all() @ /kpiEvaluation/unitReport/2
+exception 'BadMethodCallException' with message 'Call to undefined method Illuminate\Database\Query\Builder::all()' in C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:2184
+Stack trace:
+#0 C:\laragon\www\pbs\app\controllers\KpiEvaluationsController.php(212): Illuminate\Database\Query\Builder->__call('all', Array)
+#1 C:\laragon\www\pbs\app\controllers\KpiEvaluationsController.php(212): Illuminate\Database\Query\Builder->all()
+#2 [internal function]: KpiEvaluationsController->postUnitReport('2')
+#3 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Controller.php(231): call_user_func_array(Array, Array)
+#4 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php(93): Illuminate\Routing\Controller->callAction('postUnitReport', Array)
+#5 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php(62): Illuminate\Routing\ControllerDispatcher->call(Object(KpiEvaluationsController), Object(Illuminate\Routing\Route), 'postUnitReport')
+#6 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(967): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request), 'KpiEvaluationsC...', 'postUnitReport')
+#7 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}('2')
+#8 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Route.php(109): call_user_func_array(Object(Closure), Array)
+#9 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1033): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#10 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1001): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#11 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(775): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#12 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(745): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#13 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Session\Middleware.php(72): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#14 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Cookie\Queue.php(47): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#15 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Cookie\Guard.php(51): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#16 C:\laragon\www\pbs\vendor\stack\builder\src\Stack\StackedHttpKernel.php(23): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#17 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(641): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#18 C:\laragon\www\pbs\public\index.php(49): Illuminate\Foundation\Application->run()
+#19 {main} [] []
+[2017-09-25 08:21:07] production.ERROR: 500 - Call to undefined method Illuminate\Database\Query\Builder::toArray() @ /kpiEvaluation/unitReport/2
+exception 'BadMethodCallException' with message 'Call to undefined method Illuminate\Database\Query\Builder::toArray()' in C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:2184
+Stack trace:
+#0 C:\laragon\www\pbs\app\controllers\KpiEvaluationsController.php(212): Illuminate\Database\Query\Builder->__call('toArray', Array)
+#1 C:\laragon\www\pbs\app\controllers\KpiEvaluationsController.php(212): Illuminate\Database\Query\Builder->toArray()
+#2 [internal function]: KpiEvaluationsController->postUnitReport('2')
+#3 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Controller.php(231): call_user_func_array(Array, Array)
+#4 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php(93): Illuminate\Routing\Controller->callAction('postUnitReport', Array)
+#5 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php(62): Illuminate\Routing\ControllerDispatcher->call(Object(KpiEvaluationsController), Object(Illuminate\Routing\Route), 'postUnitReport')
+#6 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(967): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request), 'KpiEvaluationsC...', 'postUnitReport')
+#7 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}('2')
+#8 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Route.php(109): call_user_func_array(Object(Closure), Array)
+#9 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1033): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#10 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1001): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#11 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(775): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#12 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(745): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#13 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Session\Middleware.php(72): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#14 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Cookie\Queue.php(47): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#15 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Cookie\Guard.php(51): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#16 C:\laragon\www\pbs\vendor\stack\builder\src\Stack\StackedHttpKernel.php(23): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#17 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(641): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#18 C:\laragon\www\pbs\public\index.php(49): Illuminate\Foundation\Application->run()
+#19 {main} [] []
+[2017-09-25 08:28:44] production.ERROR: 500 - Call to undefined method Illuminate\Database\Query\Builder::toArray() @ /kpiEvaluation/unitReport/2
+exception 'BadMethodCallException' with message 'Call to undefined method Illuminate\Database\Query\Builder::toArray()' in C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:2184
+Stack trace:
+#0 C:\laragon\www\pbs\app\controllers\KpiEvaluationsController.php(212): Illuminate\Database\Query\Builder->__call('toArray', Array)
+#1 C:\laragon\www\pbs\app\controllers\KpiEvaluationsController.php(212): Illuminate\Database\Query\Builder->toArray()
+#2 [internal function]: KpiEvaluationsController->postUnitReport('2')
+#3 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Controller.php(231): call_user_func_array(Array, Array)
+#4 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php(93): Illuminate\Routing\Controller->callAction('postUnitReport', Array)
+#5 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php(62): Illuminate\Routing\ControllerDispatcher->call(Object(KpiEvaluationsController), Object(Illuminate\Routing\Route), 'postUnitReport')
+#6 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(967): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request), 'KpiEvaluationsC...', 'postUnitReport')
+#7 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}('2')
+#8 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Route.php(109): call_user_func_array(Object(Closure), Array)
+#9 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1033): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#10 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1001): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#11 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(775): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#12 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(745): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#13 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Session\Middleware.php(72): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#14 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Cookie\Queue.php(47): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#15 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Cookie\Guard.php(51): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#16 C:\laragon\www\pbs\vendor\stack\builder\src\Stack\StackedHttpKernel.php(23): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#17 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(641): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#18 C:\laragon\www\pbs\public\index.php(49): Illuminate\Foundation\Application->run()
+#19 {main} [] []
+[2017-09-25 08:28:56] production.ERROR: 500 - Undefined variable: result @ /kpiEvaluation/unitReport/2
+exception 'ErrorException' with message 'Undefined variable: result' in C:\laragon\www\pbs\app\controllers\KpiEvaluationsController.php:214
+Stack trace:
+#0 C:\laragon\www\pbs\app\controllers\KpiEvaluationsController.php(214): Illuminate\Exception\Handler->handleError(8, 'Undefined varia...', 'C:\\laragon\\www\\...', 214, Array)
+#1 [internal function]: KpiEvaluationsController->postUnitReport('2')
+#2 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Controller.php(231): call_user_func_array(Array, Array)
+#3 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php(93): Illuminate\Routing\Controller->callAction('postUnitReport', Array)
+#4 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php(62): Illuminate\Routing\ControllerDispatcher->call(Object(KpiEvaluationsController), Object(Illuminate\Routing\Route), 'postUnitReport')
+#5 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(967): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request), 'KpiEvaluationsC...', 'postUnitReport')
+#6 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}('2')
+#7 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Route.php(109): call_user_func_array(Object(Closure), Array)
+#8 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1033): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#9 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1001): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#10 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(775): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#11 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(745): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#12 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Session\Middleware.php(72): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#13 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Cookie\Queue.php(47): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#14 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Cookie\Guard.php(51): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#15 C:\laragon\www\pbs\vendor\stack\builder\src\Stack\StackedHttpKernel.php(23): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#16 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(641): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#17 C:\laragon\www\pbs\public\index.php(49): Illuminate\Foundation\Application->run()
+#18 {main} [] []
+[2017-09-25 08:29:51] production.ERROR: 500 - Cannot use object of type stdClass as array @ /kpiEvaluation/unitReport/2
+exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Cannot use object of type stdClass as array' in C:\laragon\www\pbs\app\controllers\KpiEvaluationsController.php:233
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2017-09-25 08:38:09] production.ERROR: 500 - get_object_vars() expects parameter 1 to be object, array given @ /kpiEvaluation/unitReport/2
+exception 'ErrorException' with message 'get_object_vars() expects parameter 1 to be object, array given' in C:\laragon\www\pbs\app\controllers\KpiEvaluationsController.php:213
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleError(2, 'get_object_vars...', 'C:\\laragon\\www\\...', 213, Array)
+#1 C:\laragon\www\pbs\app\controllers\KpiEvaluationsController.php(213): get_object_vars(Array)
+#2 [internal function]: KpiEvaluationsController->postUnitReport('2')
+#3 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Controller.php(231): call_user_func_array(Array, Array)
+#4 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php(93): Illuminate\Routing\Controller->callAction('postUnitReport', Array)
+#5 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php(62): Illuminate\Routing\ControllerDispatcher->call(Object(KpiEvaluationsController), Object(Illuminate\Routing\Route), 'postUnitReport')
+#6 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(967): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request), 'KpiEvaluationsC...', 'postUnitReport')
+#7 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}('2')
+#8 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Route.php(109): call_user_func_array(Object(Closure), Array)
+#9 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1033): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#10 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1001): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#11 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(775): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#12 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(745): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#13 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Session\Middleware.php(72): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#14 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Cookie\Queue.php(47): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#15 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Cookie\Guard.php(51): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#16 C:\laragon\www\pbs\vendor\stack\builder\src\Stack\StackedHttpKernel.php(23): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#17 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(641): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#18 C:\laragon\www\pbs\public\index.php(49): Illuminate\Foundation\Application->run()
+#19 {main} [] []
+[2017-09-25 08:38:47] production.ERROR: 500 - Trying to get property of non-object @ /kpiEvaluation/unitReport/2
+exception 'ErrorException' with message 'Trying to get property of non-object' in C:\laragon\www\pbs\app\controllers\KpiEvaluationsController.php:224
+Stack trace:
+#0 C:\laragon\www\pbs\app\controllers\KpiEvaluationsController.php(224): Illuminate\Exception\Handler->handleError(8, 'Trying to get p...', 'C:\\laragon\\www\\...', 224, Array)
+#1 [internal function]: KpiEvaluationsController->postUnitReport('2')
+#2 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Controller.php(231): call_user_func_array(Array, Array)
+#3 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php(93): Illuminate\Routing\Controller->callAction('postUnitReport', Array)
+#4 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php(62): Illuminate\Routing\ControllerDispatcher->call(Object(KpiEvaluationsController), Object(Illuminate\Routing\Route), 'postUnitReport')
+#5 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(967): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request), 'KpiEvaluationsC...', 'postUnitReport')
+#6 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}('2')
+#7 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Route.php(109): call_user_func_array(Object(Closure), Array)
+#8 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1033): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#9 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1001): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#10 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(775): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#11 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(745): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#12 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Session\Middleware.php(72): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#13 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Cookie\Queue.php(47): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#14 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Cookie\Guard.php(51): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#15 C:\laragon\www\pbs\vendor\stack\builder\src\Stack\StackedHttpKernel.php(23): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#16 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(641): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#17 C:\laragon\www\pbs\public\index.php(49): Illuminate\Foundation\Application->run()
+#18 {main} [] []
+[2017-09-25 08:40:47] production.ERROR: 500 - Cannot use object of type stdClass as array @ /kpiEvaluation/unitReport/2
+exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Cannot use object of type stdClass as array' in C:\laragon\www\pbs\app\controllers\KpiEvaluationsController.php:231
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2017-09-25 10:03:00] production.ERROR: 500 - syntax error, unexpected '}' @ /kpiEvaluation/unitReport/2
+exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '}'' in C:\laragon\www\pbs\app\controllers\KpiEvaluationsController.php:198
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2017-09-25 10:10:29] production.ERROR: 500 - Call to undefined function selectRaw() @ /kpiEvaluation/unitReport/2
+exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined function selectRaw()' in C:\laragon\www\pbs\app\controllers\KpiEvaluationsController.php:211
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []

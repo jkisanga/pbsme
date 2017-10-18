@@ -1,0 +1,67 @@
+[2017-09-28 05:11:24] production.INFO: delete from `kpi_fields` where `field_id` = '22' {"url":"http://www.pbs.tzchoice.co.tz/refKpiFields/delete/22","user":"Administrator Administrator","ip":"156.157.128.217"} []
+[2017-09-28 05:11:24] production.INFO: delete from `ref_kpi_fields` where `id` = '22' {"url":"http://www.pbs.tzchoice.co.tz/refKpiFields/delete/22","user":"Administrator Administrator","ip":"156.157.128.217"} []
+[2017-09-28 08:47:37] production.INFO: delete from `kpi_fields` where `field_id` = '48' {"url":"http://pbs.tzchoice.co.tz/refKpiFields/delete/48","user":"Jovi Jovi","ip":"197.250.228.97"} []
+[2017-09-28 08:47:37] production.INFO: delete from `ref_kpi_fields` where `id` = '48' {"url":"http://pbs.tzchoice.co.tz/refKpiFields/delete/48","user":"Jovi Jovi","ip":"197.250.228.97"} []
+[2017-09-28 08:49:51] production.INFO: insert into `ref_kpi_fields` (`name`, `label`, `data_type`, `validation_rule`, `options`, `updated_at`, `created_at`) values ('desc_corpt_incidence', 'Type of corruption incidence', 'enum', '', 'Corruption at check point,Licensing,Harvesting permit,Transit passes', '2017-09-28 08:49:51', '2017-09-28 08:49:51') {"url":"http://pbs.tzchoice.co.tz/refKpiFields/store","user":"Jovi Jovi","ip":"197.250.228.97"} []
+[2017-09-28 08:50:27] production.ERROR: 404 - Controller method not found. @ /kpis/removeFld/36
+exception 'Symfony\Component\HttpKernel\Exception\NotFoundHttpException' with message 'Controller method not found.' in /home/tzchoice/pbs/vendor/laravel/framework/src/Illuminate/Routing/Controller.php:254
+Stack trace:
+#0 [internal function]: Illuminate\Routing\Controller->missingMethod(Array)
+#1 /home/tzchoice/pbs/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(231): call_user_func_array(Array, Array)
+#2 /home/tzchoice/pbs/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(93): Illuminate\Routing\Controller->callAction('missingMethod', Array)
+#3 /home/tzchoice/pbs/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(62): Illuminate\Routing\ControllerDispatcher->call(Object(KpisController), Object(Illuminate\Routing\Route), 'missingMethod')
+#4 /home/tzchoice/pbs/vendor/laravel/framework/src/Illuminate/Routing/Router.php(967): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request), 'KpisController', 'missingMethod')
+#5 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}(Array)
+#6 /home/tzchoice/pbs/vendor/laravel/framework/src/Illuminate/Routing/Route.php(109): call_user_func_array(Object(Closure), Array)
+#7 /home/tzchoice/pbs/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1033): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#8 /home/tzchoice/pbs/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1001): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#9 /home/tzchoice/pbs/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(775): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#10 /home/tzchoice/pbs/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(745): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#11 /home/tzchoice/pbs/vendor/laravel/framework/src/Illuminate/Session/Middleware.php(72): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#12 /home/tzchoice/pbs/vendor/laravel/framework/src/Illuminate/Cookie/Queue.php(47): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#13 /home/tzchoice/pbs/vendor/laravel/framework/src/Illuminate/Cookie/Guard.php(51): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#14 /home/tzchoice/pbs/vendor/stack/builder/src/Stack/StackedHttpKernel.php(23): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#15 /home/tzchoice/pbs/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(641): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#16 /home/tzchoice/pbs/public/index.php(49): Illuminate\Foundation\Application->run()
+#17 {main} [] []
+[2017-09-28 08:51:16] production.INFO: insert into `kpi_fields` (`kpi_id`, `field_id`, `updated_at`, `created_at`) values ('7', '84', '2017-09-28 08:51:16', '2017-09-28 08:51:16') {"url":"http://pbs.tzchoice.co.tz/kpis/fields/7","user":"Jovi Jovi","ip":"197.250.228.97"} []
+[2017-09-28 08:53:53] production.INFO: insert into `ref_kpi_fields` (`name`, `label`, `data_type`, `validation_rule`, `options`, `updated_at`, `created_at`) values ('complain_type', 'Type of complaint', 'enum', '', 'poor service,lack of commitment,lack of expertise', '2017-09-28 08:53:53', '2017-09-28 08:53:53') {"url":"http://pbs.tzchoice.co.tz/refKpiFields/store","user":"Jovi Jovi","ip":"197.250.228.97"} []
+[2017-09-28 08:56:38] production.INFO: insert into `kpi_fields` (`kpi_id`, `field_id`, `updated_at`, `created_at`) values ('8', '85', '2017-09-28 08:56:38', '2017-09-28 08:56:38') {"url":"http://pbs.tzchoice.co.tz/kpis/fields/8","user":"Jovi Jovi","ip":"197.250.228.97"} []
+[2017-09-28 08:58:29] production.INFO: insert into `kpi_fields` (`kpi_id`, `field_id`, `updated_at`, `created_at`) values ('8', '16', '2017-09-28 08:58:29', '2017-09-28 08:58:29') {"url":"http://pbs.tzchoice.co.tz/kpis/fields/8","user":"Jovi Jovi","ip":"197.250.228.97"} []
+[2017-09-28 09:01:36] production.INFO: insert into `ref_kpi_fields` (`name`, `label`, `data_type`, `validation_rule`, `options`, `updated_at`, `created_at`) values ('gender', 'Gender', 'enum', '', 'Male,Female', '2017-09-28 09:01:36', '2017-09-28 09:01:36') {"url":"http://pbs.tzchoice.co.tz/refKpiFields/store","user":"Jovi Jovi","ip":"197.250.228.97"} []
+[2017-09-28 09:05:32] production.INFO: insert into `kpi_fields` (`kpi_id`, `field_id`, `updated_at`, `created_at`) values ('11', '23', '2017-09-28 09:05:32', '2017-09-28 09:05:32') {"url":"http://pbs.tzchoice.co.tz/kpis/fields/11","user":"Jovi Jovi","ip":"197.250.228.97"} []
+[2017-09-28 09:05:32] production.INFO: insert into `kpi_fields` (`kpi_id`, `field_id`, `updated_at`, `created_at`) values ('11', '43', '2017-09-28 09:05:32', '2017-09-28 09:05:32') {"url":"http://pbs.tzchoice.co.tz/kpis/fields/11","user":"Jovi Jovi","ip":"197.250.228.97"} []
+[2017-09-28 09:05:32] production.INFO: insert into `kpi_fields` (`kpi_id`, `field_id`, `updated_at`, `created_at`) values ('11', '54', '2017-09-28 09:05:32', '2017-09-28 09:05:32') {"url":"http://pbs.tzchoice.co.tz/kpis/fields/11","user":"Jovi Jovi","ip":"197.250.228.97"} []
+[2017-09-28 09:05:32] production.INFO: insert into `kpi_fields` (`kpi_id`, `field_id`, `updated_at`, `created_at`) values ('11', '71', '2017-09-28 09:05:32', '2017-09-28 09:05:32') {"url":"http://pbs.tzchoice.co.tz/kpis/fields/11","user":"Jovi Jovi","ip":"197.250.228.97"} []
+[2017-09-28 09:05:32] production.INFO: insert into `kpi_fields` (`kpi_id`, `field_id`, `updated_at`, `created_at`) values ('11', '72', '2017-09-28 09:05:32', '2017-09-28 09:05:32') {"url":"http://pbs.tzchoice.co.tz/kpis/fields/11","user":"Jovi Jovi","ip":"197.250.228.97"} []
+[2017-09-28 09:05:32] production.INFO: insert into `kpi_fields` (`kpi_id`, `field_id`, `updated_at`, `created_at`) values ('11', '73', '2017-09-28 09:05:32', '2017-09-28 09:05:32') {"url":"http://pbs.tzchoice.co.tz/kpis/fields/11","user":"Jovi Jovi","ip":"197.250.228.97"} []
+[2017-09-28 09:05:32] production.INFO: insert into `kpi_fields` (`kpi_id`, `field_id`, `updated_at`, `created_at`) values ('11', '74', '2017-09-28 09:05:32', '2017-09-28 09:05:32') {"url":"http://pbs.tzchoice.co.tz/kpis/fields/11","user":"Jovi Jovi","ip":"197.250.228.97"} []
+[2017-09-28 09:05:32] production.INFO: insert into `kpi_fields` (`kpi_id`, `field_id`, `updated_at`, `created_at`) values ('11', '76', '2017-09-28 09:05:32', '2017-09-28 09:05:32') {"url":"http://pbs.tzchoice.co.tz/kpis/fields/11","user":"Jovi Jovi","ip":"197.250.228.97"} []
+[2017-09-28 09:05:32] production.INFO: insert into `kpi_fields` (`kpi_id`, `field_id`, `updated_at`, `created_at`) values ('11', '77', '2017-09-28 09:05:32', '2017-09-28 09:05:32') {"url":"http://pbs.tzchoice.co.tz/kpis/fields/11","user":"Jovi Jovi","ip":"197.250.228.97"} []
+[2017-09-28 09:05:32] production.INFO: insert into `kpi_fields` (`kpi_id`, `field_id`, `updated_at`, `created_at`) values ('11', '78', '2017-09-28 09:05:32', '2017-09-28 09:05:32') {"url":"http://pbs.tzchoice.co.tz/kpis/fields/11","user":"Jovi Jovi","ip":"197.250.228.97"} []
+[2017-09-28 09:05:32] production.INFO: insert into `kpi_fields` (`kpi_id`, `field_id`, `updated_at`, `created_at`) values ('11', '82', '2017-09-28 09:05:32', '2017-09-28 09:05:32') {"url":"http://pbs.tzchoice.co.tz/kpis/fields/11","user":"Jovi Jovi","ip":"197.250.228.97"} []
+[2017-09-28 09:05:32] production.INFO: insert into `kpi_fields` (`kpi_id`, `field_id`, `updated_at`, `created_at`) values ('11', '83', '2017-09-28 09:05:32', '2017-09-28 09:05:32') {"url":"http://pbs.tzchoice.co.tz/kpis/fields/11","user":"Jovi Jovi","ip":"197.250.228.97"} []
+[2017-09-28 09:05:32] production.INFO: insert into `kpi_fields` (`kpi_id`, `field_id`, `updated_at`, `created_at`) values ('11', '86', '2017-09-28 09:05:32', '2017-09-28 09:05:32') {"url":"http://pbs.tzchoice.co.tz/kpis/fields/11","user":"Jovi Jovi","ip":"197.250.228.97"} []
+[2017-09-28 09:15:44] production.ERROR: 404 - Controller method not found. @ /kpis/removeFld/22
+exception 'Symfony\Component\HttpKernel\Exception\NotFoundHttpException' with message 'Controller method not found.' in /home/tzchoice/pbs/vendor/laravel/framework/src/Illuminate/Routing/Controller.php:254
+Stack trace:
+#0 [internal function]: Illuminate\Routing\Controller->missingMethod(Array)
+#1 /home/tzchoice/pbs/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(231): call_user_func_array(Array, Array)
+#2 /home/tzchoice/pbs/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(93): Illuminate\Routing\Controller->callAction('missingMethod', Array)
+#3 /home/tzchoice/pbs/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(62): Illuminate\Routing\ControllerDispatcher->call(Object(KpisController), Object(Illuminate\Routing\Route), 'missingMethod')
+#4 /home/tzchoice/pbs/vendor/laravel/framework/src/Illuminate/Routing/Router.php(967): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request), 'KpisController', 'missingMethod')
+#5 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}(Array)
+#6 /home/tzchoice/pbs/vendor/laravel/framework/src/Illuminate/Routing/Route.php(109): call_user_func_array(Object(Closure), Array)
+#7 /home/tzchoice/pbs/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1033): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#8 /home/tzchoice/pbs/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1001): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#9 /home/tzchoice/pbs/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(775): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#10 /home/tzchoice/pbs/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(745): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#11 /home/tzchoice/pbs/vendor/laravel/framework/src/Illuminate/Session/Middleware.php(72): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#12 /home/tzchoice/pbs/vendor/laravel/framework/src/Illuminate/Cookie/Queue.php(47): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#13 /home/tzchoice/pbs/vendor/laravel/framework/src/Illuminate/Cookie/Guard.php(51): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#14 /home/tzchoice/pbs/vendor/stack/builder/src/Stack/StackedHttpKernel.php(23): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#15 /home/tzchoice/pbs/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(641): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#16 /home/tzchoice/pbs/public/index.php(49): Illuminate\Foundation\Application->run()
+#17 {main} [] []
+[2017-09-28 09:24:30] production.INFO: delete from `kpi_fields` where `id` = '56' {"url":"http://pbs.tzchoice.co.tz/kpis/removeFld/56","user":"Jovi Jovi","ip":"197.250.228.97"} []
+[2017-09-28 09:24:49] production.INFO: delete from `kpi_fields` where `id` = '22' {"url":"http://www.pbs.tzchoice.co.tz/kpis/removeFld/22","user":"Administrator Administrator","ip":"156.157.128.217"} []

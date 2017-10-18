@@ -1,0 +1,24 @@
+[2017-09-13 05:09:20] production.ERROR: 500 - Trying to get property of non-object @ /
+exception 'ErrorException' with message 'Trying to get property of non-object' in C:\laragon\www\pbs\app\filters.php:150
+Stack trace:
+#0 C:\laragon\www\pbs\app\filters.php(150): Illuminate\Exception\Handler->handleError(8, 'Trying to get p...', 'C:\\laragon\\www\\...', 150, Array)
+#1 [internal function]: {closure}('insert into `mi...', Array, 21.7, 'mysql')
+#2 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Events\Dispatcher.php(199): call_user_func_array(Object(Closure), Array)
+#3 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Database\Connection.php(719): Illuminate\Events\Dispatcher->fire('illuminate.quer...', Array)
+#4 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Database\Connection.php(595): Illuminate\Database\Connection->logQuery('insert into `mi...', Array, 21.7)
+#5 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Database\Connection.php(370): Illuminate\Database\Connection->run('insert into `mi...', Array, Object(Closure))
+#6 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Database\Connection.php(327): Illuminate\Database\Connection->statement('insert into `mi...', Array)
+#7 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php(1894): Illuminate\Database\Connection->insert('insert into `mi...', Array)
+#8 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Database\Migrations\DatabaseMigrationRepository.php(74): Illuminate\Database\Query\Builder->insert(Array)
+#9 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Database\Migrations\Migrator.php(140): Illuminate\Database\Migrations\DatabaseMigrationRepository->log('2017_09_08_0955...', 45)
+#10 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Database\Migrations\Migrator.php(111): Illuminate\Database\Migrations\Migrator->runUp('2017_09_08_0955...', 45, false)
+#11 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Database\Migrations\Migrator.php(82): Illuminate\Database\Migrations\Migrator->runMigrationList(Array, false)
+#12 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Database\Console\Migrations\MigrateCommand.php(70): Illuminate\Database\Migrations\Migrator->run('C:\\laragon\\www\\...', false)
+#13 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Console\Command.php(112): Illuminate\Database\Console\Migrations\MigrateCommand->fire()
+#14 C:\laragon\www\pbs\vendor\symfony\console\Symfony\Component\Console\Command\Command.php(253): Illuminate\Console\Command->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#15 C:\laragon\www\pbs\vendor\laravel\framework\src\Illuminate\Console\Command.php(100): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#16 C:\laragon\www\pbs\vendor\symfony\console\Symfony\Component\Console\Application.php(889): Illuminate\Console\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#17 C:\laragon\www\pbs\vendor\symfony\console\Symfony\Component\Console\Application.php(193): Symfony\Component\Console\Application->doRunCommand(Object(Illuminate\Database\Console\Migrations\MigrateCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#18 C:\laragon\www\pbs\vendor\symfony\console\Symfony\Component\Console\Application.php(124): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#19 C:\laragon\www\pbs\artisan(59): Symfony\Component\Console\Application->run()
+#20 {main} [] []
